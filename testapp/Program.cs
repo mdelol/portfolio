@@ -17,18 +17,6 @@ namespace testapp
         static void Main(string[] args)
         {
             var b = AchievmentsRepository.GetInstance().GetObjects();
-            using (var db = new AchievmentContext())
-            {
-                db.PropertyTypes.Add(new AchievmentPropertyType() {Name = "Hi"});
-                var a = new Achievment()
-                {
-                    //Properties = new List<AchievmentProperty>() {AP},
-                    Type = AchievmentType.Publication
-                };
-
-                //db.EnumPropertyTypes.Add(levelProperty);
-                db.Achievments.Add(a);
-            }
         }
 
         

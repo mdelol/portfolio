@@ -57,7 +57,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\Achievment.csproj">
+    <ProjectReference Include="..\Achievments\Achievment.csproj">
       <Project>{224A0914-B6EF-4731-AC43-A5536D085298}</Project>
       <Name>Achievment</Name>
     </ProjectReference>
