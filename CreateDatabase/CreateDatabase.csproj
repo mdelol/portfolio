@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C4015A7A-B717-4EE5-9C08-65F9D43FDACD}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{2CDA380F-14B4-4BBE-A2BC-AFCF676DDB80}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataLayer</RootNamespace>
-    <AssemblyName>DataLayer</AssemblyName>
+    <RootNamespace>CreateDatabase</RootNamespace>
+    <AssemblyName>CreateDatabase</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -47,21 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201412011657107_InitialCreate.cs" />
-    <Compile Include="Migrations\201412011657107_InitialCreate.Designer.cs">
-      <DependentUpon>201412011657107_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412021702569_refactor.cs" />
-    <Compile Include="Migrations\201412021702569_refactor.Designer.cs">
-      <DependentUpon>201412021702569_refactor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Repositories\AchievmentsRepository.cs" />
-    <Compile Include="AchievmentContext.cs" />
-    <Compile Include="Repositories\EnumPropertiesRepository.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="CreateBaseDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\PropertiesRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -69,17 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Achievments\Achievment.csproj">
-      <Project>{224A0914-B6EF-4731-AC43-A5536D085298}</Project>
+      <Project>{224a0914-b6ef-4731-ac43-a5536d085298}</Project>
       <Name>Achievment</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201412011657107_InitialCreate.resx">
-      <DependentUpon>201412011657107_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412021702569_refactor.resx">
-      <DependentUpon>201412021702569_refactor.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\DataLayer\DataAccessLayer.csproj">
+      <Project>{c4015a7a-b717-4ee5-9c08-65f9d43fdacd}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

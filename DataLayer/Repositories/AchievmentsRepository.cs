@@ -2,7 +2,7 @@
 using System.Linq;
 using Achievments;
 
-namespace DataLayer
+namespace DataLayer.Repositories
 {
     public class AchievmentsRepository : IRepository<Achievment>
     {
@@ -33,6 +33,15 @@ namespace DataLayer
             lock (_db)
             {
                 _db.Achievments.Add(achievment);
+                return _db.SaveChanges();
+            }
+        }
+
+        public int AddRange(List<Achievment> objects)
+        {
+            lock (_db)
+            {
+                _db.Achievments.AddRange(objects);
                 return _db.SaveChanges();
             }
         }

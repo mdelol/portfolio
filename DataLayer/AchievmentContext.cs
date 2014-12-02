@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using Achievments;
-//using Achievments.AchievmentProperties;
+using Achievments.AchievmentProperties;
 
 
 namespace DataLayer
@@ -17,6 +17,6 @@ namespace DataLayer
 
             public DbSet<AchievmentPropertyType> PropertyTypes { get; set; }
 
-            //public DbSet<EnumPropertyType> EnumPropertyTypes { get; set; } 
+            public DbSet<EnumProperty> EnumProperties { get; set; } 
         }
 }
