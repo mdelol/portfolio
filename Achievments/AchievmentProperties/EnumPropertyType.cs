@@ -8,7 +8,7 @@ namespace Achievments.AchievmentProperties
 
         public string Name { get; set; }
 
-        public List<EnumPropertyTypeValue> AvailibleAValues { get; set; }
+        public virtual List<EnumPropertyTypeValue> AvailibleValues { get; set; }
 
         public AchievmentType ApplicableToTypes { get; set; }
 

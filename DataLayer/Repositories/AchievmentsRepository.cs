@@ -1,14 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using Achievments;
 
 namespace DataLayer.Repositories
 {
-    public class AchievmentsRepository : IRepository<Achievment>
+    public class AchievmentsRepository : BaseRepository<Achievment>
     {
         private static AchievmentsRepository _repository;
-
-        private AchievmentContext _db = new AchievmentContext();
 
         private AchievmentsRepository()
         {
@@ -20,7 +19,7 @@ namespace DataLayer.Repositories
             return _repository ?? (_repository = new AchievmentsRepository());
         }
 
-        public List<Achievment> GetObjects()
+        public override List<Achievment> GetObjects()
         {
             lock (_db)
             {
@@ -28,7 +27,7 @@ namespace DataLayer.Repositories
             }
         }
 
-        public int AddObject(Achievment achievment)
+        public override int AddObject(Achievment achievment)
         {
             lock (_db)
             {
@@ -37,7 +36,7 @@ namespace DataLayer.Repositories
             }
         }
 
-        public int AddRange(List<Achievment> objects)
+        public override int AddRange(IEnumerable<Achievment> objects)
         {
             lock (_db)
             {

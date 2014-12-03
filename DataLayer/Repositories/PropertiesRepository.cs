@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using Achievments;
 
 namespace DataLayer.Repositories
 {
-    class PropertiesRepository : IRepository<AchievmentPropertyType>
+    class PropertiesRepository : BaseRepository<AchievmentPropertyType>
     {
         private static PropertiesRepository _repository;
 
@@ -22,7 +23,7 @@ namespace DataLayer.Repositories
         {
             return _repository ?? (_repository = new PropertiesRepository());
         }
-        public List<AchievmentPropertyType> GetObjects()
+        public override List<AchievmentPropertyType> GetObjects()
         {
             lock (_db)
             {
@@ -30,7 +31,7 @@ namespace DataLayer.Repositories
             }
         }
 
-        public int AddObject(AchievmentPropertyType obj)
+        public override int AddObject(AchievmentPropertyType obj)
         {
             lock (_db)
             {
@@ -39,7 +40,7 @@ namespace DataLayer.Repositories
             }
         }
 
-        public int AddRange(List<AchievmentPropertyType> objects)
+        public override int AddRange(IEnumerable<AchievmentPropertyType> objects)
         {
             lock (_db)
             {

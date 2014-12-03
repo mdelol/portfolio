@@ -18,6 +18,8 @@ namespace testapp
         static void Main(string[] args)
         {
             var b = AchievmentsRepository.GetInstance().GetObjects();
+            var a = EnumPropertyTypesRepository.GetInstance().GetObjects();
+            var c = a.First().AvailibleValues;
         }
 
         

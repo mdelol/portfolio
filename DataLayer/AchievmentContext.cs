@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using Achievments;
 using Achievments.AchievmentProperties;
+using Command.Filters;
 
 
 namespace DataLayer
@@ -17,6 +18,8 @@ namespace DataLayer
 
             public DbSet<AchievmentPropertyType> PropertyTypes { get; set; }
 
-            public DbSet<EnumProperty> EnumProperties { get; set; } 
+            public DbSet<EnumPropertyType> EnumPropertyTypes { get; set; }
+
+            public DbSet<BaseFilter> Filters { get; set; } 
         }
 }

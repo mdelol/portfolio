@@ -55,11 +55,23 @@
     <Compile Include="Migrations\201412021702569_refactor.Designer.cs">
       <DependentUpon>201412021702569_refactor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412031549075_filters.cs" />
+    <Compile Include="Migrations\201412031549075_filters.Designer.cs">
+      <DependentUpon>201412031549075_filters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412031640516_rename.cs" />
+    <Compile Include="Migrations\201412031640516_rename.Designer.cs">
+      <DependentUpon>201412031640516_rename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412031641454_virtual.cs" />
+    <Compile Include="Migrations\201412031641454_virtual.Designer.cs">
+      <DependentUpon>201412031641454_virtual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AchievmentsRepository.cs" />
     <Compile Include="AchievmentContext.cs" />
-    <Compile Include="Repositories\EnumPropertiesRepository.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\EnumPropertyTypesRepository.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\PropertiesRepository.cs" />
   </ItemGroup>
@@ -72,6 +84,10 @@
       <Project>{224A0914-B6EF-4731-AC43-A5536D085298}</Project>
       <Name>Achievment</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Command\Command.csproj">
+      <Project>{7bc9e3cd-c8ee-4b21-8a64-9b1e0ff034f9}</Project>
+      <Name>Command</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201412011657107_InitialCreate.resx">
@@ -79,6 +95,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412021702569_refactor.resx">
       <DependentUpon>201412021702569_refactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412031549075_filters.resx">
+      <DependentUpon>201412031549075_filters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412031640516_rename.resx">
+      <DependentUpon>201412031640516_rename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412031641454_virtual.resx">
+      <DependentUpon>201412031641454_virtual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

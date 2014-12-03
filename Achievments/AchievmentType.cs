@@ -5,8 +5,9 @@ namespace Achievments
     [Flags]
     public enum AchievmentType
     {
-        Publication,
+        
+        Publication = 1,
 
-        Other
+        Other = 2
     }
 }
