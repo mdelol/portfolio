@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Achievments;
+using Achievments.AchievmentProperties;
+using Command.Filters;
 using DataLayer;
 using DataLayer.Repositories;
 
@@ -18,8 +20,9 @@ namespace testapp
         static void Main(string[] args)
         {
             var b = AchievmentsRepository.GetInstance().GetObjects();
-            var a = EnumPropertyTypesRepository.GetInstance().GetObjects();
-            var c = a.First().AvailibleValues;
+            var a = PropertyTypesRepository.GetInstance().GetObjects().First();
+            var f = new ExactFilter() { Type = a, ExactValue = "ololololo-lololo-lololo" };
+            var t = f.Filter(b);
         }
 
         

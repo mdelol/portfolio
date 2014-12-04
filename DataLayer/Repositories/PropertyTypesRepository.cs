@@ -8,20 +8,20 @@ using Achievments;
 
 namespace DataLayer.Repositories
 {
-    class PropertiesRepository : BaseRepository<AchievmentPropertyType>
+    public class PropertyTypesRepository : BaseRepository<AchievmentPropertyType>
     {
-        private static PropertiesRepository _repository;
+        private static PropertyTypesRepository _repository;
 
         private AchievmentContext _db = new AchievmentContext();
 
-        private PropertiesRepository()
+        private PropertyTypesRepository()
         {
 
         }
 
-        public static PropertiesRepository GetInstance()
+        public static PropertyTypesRepository GetInstance()
         {
-            return _repository ?? (_repository = new PropertiesRepository());
+            return _repository ?? (_repository = new PropertyTypesRepository());
         }
         public override List<AchievmentPropertyType> GetObjects()
         {

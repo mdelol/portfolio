@@ -10,10 +10,12 @@ namespace Command.Filters
         public override List<Achievment> Filter(IEnumerable<Achievment> achievments)
         {
             return achievments.Where(achievment => achievment.EnumProperties.Any(
-                            property => property.Type == ExactValue.Type 
-                            && property.SelectedValue == ExactValue.SelectedValue))
+                            property => property.Type == Type
+                            && property.SelectedValue == ExactValue))
                             .ToList();
         }
-        public EnumProperty ExactValue { get; set; }
+        public EnumPropertyType Type { get; set; }
+
+        public EnumPropertyTypeValue ExactValue { get; set; }
     }
 }

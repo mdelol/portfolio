@@ -10,9 +10,9 @@ namespace Achievments.AchievmentProperties
     {
         public int EnumPropertyId { get; set; }
 
-        public EnumPropertyTypeValue SelectedValue { get; set; }
+        public virtual EnumPropertyTypeValue SelectedValue { get; set; }
 
-        public EnumPropertyType Type { get; set; }
+        public virtual EnumPropertyType Type { get; set; }
 
         public Achievment Achievment { get; set; }
     }

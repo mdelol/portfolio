@@ -67,13 +67,25 @@
     <Compile Include="Migrations\201412031641454_virtual.Designer.cs">
       <DependentUpon>201412031641454_virtual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412041642066_ENumFilterCorrection.cs" />
+    <Compile Include="Migrations\201412041642066_ENumFilterCorrection.Designer.cs">
+      <DependentUpon>201412041642066_ENumFilterCorrection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412041650234_fix.cs" />
+    <Compile Include="Migrations\201412041650234_fix.Designer.cs">
+      <DependentUpon>201412041650234_fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412041744183_ff.cs" />
+    <Compile Include="Migrations\201412041744183_ff.Designer.cs">
+      <DependentUpon>201412041744183_ff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AchievmentsRepository.cs" />
     <Compile Include="AchievmentContext.cs" />
     <Compile Include="Repositories\EnumPropertyTypesRepository.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\PropertiesRepository.cs" />
+    <Compile Include="Repositories\PropertyTypesRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -104,6 +116,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412031641454_virtual.resx">
       <DependentUpon>201412031641454_virtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412041642066_ENumFilterCorrection.resx">
+      <DependentUpon>201412041642066_ENumFilterCorrection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412041650234_fix.resx">
+      <DependentUpon>201412041650234_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412041744183_ff.resx">
+      <DependentUpon>201412041744183_ff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

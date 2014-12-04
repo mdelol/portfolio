@@ -7,7 +7,7 @@ using Achievments;
 
 namespace Command.Filters
 {
-    class RangeFilter : BaseFilter
+    public class RangeFilter : BaseFilter
     {
 
         public override List<Achievment> Filter(IEnumerable<Achievment> achievments)
