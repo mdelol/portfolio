@@ -14,8 +14,8 @@ namespace Command.Filters
                             && property.SelectedValue == ExactValue))
                             .ToList();
         }
-        public EnumPropertyType Type { get; set; }
+        public virtual EnumPropertyType Type { get; set; }
 
-        public EnumPropertyTypeValue ExactValue { get; set; }
+        public virtual EnumPropertyTypeValue ExactValue { get; set; }
     }
 }

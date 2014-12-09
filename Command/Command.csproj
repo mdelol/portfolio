@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filters\ComplexFilter.cs" />
     <Compile Include="Filters\EnumExactFilter.cs" />
     <Compile Include="Filters\ExactFilter.cs" />
     <Compile Include="Filters\BaseFilter.cs" />

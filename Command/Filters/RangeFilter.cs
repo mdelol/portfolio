@@ -23,6 +23,6 @@ namespace Command.Filters
 
         public double UpperValue { get; set; }
 
-        public AchievmentPropertyType Type { get; set; }
+        public virtual AchievmentPropertyType Type { get; set; }
     }
 }

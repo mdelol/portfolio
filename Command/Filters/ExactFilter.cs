@@ -16,23 +16,9 @@ namespace Command.Filters
                 property => property.Type == Type
                 && property.Value == ExactValue))
                 .ToList();
-            //foreach (var achievment in achievments)
-            //{
-            //    foreach (var property in achievment.Properties)
-            //    {
-            //        if (property.Type == Type)
-            //        {
-            //            if (property.Value == ExactValue)
-            //            {
-            //                int i = 9;
-            //            }
-            //        }
-            //    }
-            //}
-            //return new List<Achievment>();
         }
 
-        public AchievmentPropertyType Type { get; set; }
+        public virtual AchievmentPropertyType Type { get; set; }
 
         public string ExactValue { get; set; }
 

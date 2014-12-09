@@ -22,7 +22,9 @@ namespace testapp
             var b = AchievmentsRepository.GetInstance().GetObjects();
             var a = PropertyTypesRepository.GetInstance().GetObjects().First();
             var f = new ExactFilter() { Type = a, ExactValue = "ololololo-lololo-lololo" };
-            var t = f.Filter(b);
+            var g = new ExactFilter() {Type = a, ExactValue = "not funny at all"};
+            var cf = new ComplexFilter() {Filters = new List<BaseFilter>() {f, g}};
+            var result = cf.Filter(b);
         }
 
         

@@ -79,6 +79,14 @@
     <Compile Include="Migrations\201412041744183_ff.Designer.cs">
       <DependentUpon>201412041744183_ff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412091518279_complexfilter.cs" />
+    <Compile Include="Migrations\201412091518279_complexfilter.Designer.cs">
+      <DependentUpon>201412091518279_complexfilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412091623044_complexfilter1.cs" />
+    <Compile Include="Migrations\201412091623044_complexfilter1.Designer.cs">
+      <DependentUpon>201412091623044_complexfilter1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AchievmentsRepository.cs" />
     <Compile Include="AchievmentContext.cs" />
@@ -125,6 +133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412041744183_ff.resx">
       <DependentUpon>201412041744183_ff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412091518279_complexfilter.resx">
+      <DependentUpon>201412091518279_complexfilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412091623044_complexfilter1.resx">
+      <DependentUpon>201412091623044_complexfilter1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
