@@ -14,10 +14,7 @@ namespace CreateDatabase
         private static EnumPropertyType _participantEnumPropertyType;
         private static AchievmentPropertyType _yearPropertyType;
         private static AchievmentPropertyType _namePropertyType;
-        /// <summary>
-        /// huemoe
-        /// </summary>
-        /// <param name="args"></param>
+
         private static void Main(string[] args)
         {
             CreateLevelEnumPropertyType();
