@@ -5,6 +5,9 @@ using Achievments.AchievmentProperties;
 
 namespace DataLayer.Repositories
 {
+    /// <summary>
+    /// репозиторий типов enum-свойств
+    /// </summary>
     public class EnumPropertyTypesRepository : BaseRepository<EnumPropertyType>
     {
         private static EnumPropertyTypesRepository _repository;

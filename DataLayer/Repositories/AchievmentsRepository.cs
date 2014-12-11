@@ -5,6 +5,9 @@ using Achievments;
 
 namespace DataLayer.Repositories
 {
+    /// <summary>
+    /// репозиторий достижений
+    /// </summary>
     public class AchievmentsRepository : BaseRepository<Achievment>
     {
         private static AchievmentsRepository _repository;

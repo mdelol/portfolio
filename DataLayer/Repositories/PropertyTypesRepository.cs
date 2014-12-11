@@ -8,6 +8,9 @@ using Achievments;
 
 namespace DataLayer.Repositories
 {
+    /// <summary>
+    /// репозиторий типов свойств достижений
+    /// </summary>
     public class PropertyTypesRepository : BaseRepository<AchievmentPropertyType>
     {
         private static PropertyTypesRepository _repository;

@@ -104,9 +104,9 @@
       <Project>{224A0914-B6EF-4731-AC43-A5536D085298}</Project>
       <Name>Achievment</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Command\Command.csproj">
+    <ProjectReference Include="..\Command\Commands.csproj">
       <Project>{7bc9e3cd-c8ee-4b21-8a64-9b1e0ff034f9}</Project>
-      <Name>Command</Name>
+      <Name>Commands</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

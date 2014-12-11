@@ -2,8 +2,12 @@
 using System.Linq;
 using Achievments;
 
-namespace Command.Filters
+namespace Commands.Filters
 {
+    /// <summary>
+    /// Фильтр, состоящий из нескольких однотипных фильтров, 
+    /// TODO возможно, следует сделать дженериком
+    /// </summary>
     public class ComplexFilter:BaseFilter 
     {
         public override List<Achievment> Filter(IEnumerable<Achievment> achievments)

@@ -8,6 +8,9 @@ using DataLayer.Repositories;
 
 namespace CreateDatabase
 {
+    /// <summary>
+    /// Создает начальную базу данных для проверки.
+    /// </summary>
     internal class CreateBaseDatabase
     {
         private static EnumPropertyType _levelEnumPropertyType;

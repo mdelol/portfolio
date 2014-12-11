@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using Achievments;
 using Achievments.AchievmentProperties;
-using Command.Filters;
+using Commands.Filters;
 
 
 namespace DataLayer
 {
+    /// <summary>
+    /// таблицы бд, к которым мы имеем доступ
+    /// </summary>
         public class AchievmentContext : DbContext
         {
             public DbSet<Achievment> Achievments { get; set; }

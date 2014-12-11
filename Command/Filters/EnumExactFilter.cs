@@ -3,8 +3,11 @@ using System.Linq;
 using Achievments;
 using Achievments.AchievmentProperties;
 
-namespace Command.Filters
+namespace Commands.Filters
 {
+    /// <summary>
+    /// фильтр по точному совпадению значения enum- свойства
+    /// </summary>
     public class EnumExactFilter : BaseFilter
     {
         public override List<Achievment> Filter(IEnumerable<Achievment> achievments)

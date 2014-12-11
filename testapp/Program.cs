@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Achievments;
 using Achievments.AchievmentProperties;
-using Command.Filters;
+using Commands.Filters;
 using DataLayer;
 using DataLayer.Repositories;
 
 namespace testapp
 {
+    /// <summary>
+    /// тут тестируем
+    /// </summary>
     class Program
     {
         static void Main(string[] args)

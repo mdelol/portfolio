@@ -10,10 +10,19 @@ namespace Achievments
     {
         public int AchievmentPropertyTypeId { get; set; }
 
+        /// <summary>
+        /// Наименование
+        /// </summary>
         public string Name { get; set; }
 
+        /// <summary>
+        /// Тип, для восстановления значения из строки
+        /// </summary>
         public string Type { get; set; }
 
+        /// <summary>
+        /// Для каких достижений может применяться
+        /// </summary>
         public AchievmentType ApplicableToTypes { get; set; }
 
         public static bool operator == (AchievmentPropertyType a, AchievmentPropertyType b)

@@ -7,8 +7,8 @@
     <ProjectGuid>{7BC9E3CD-C8EE-4B21-8A64-9B1E0FF034F9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Command</RootNamespace>
-    <AssemblyName>Command</AssemblyName>
+    <RootNamespace>Commands</RootNamespace>
+    <AssemblyName>Commands</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command.cs" />
     <Compile Include="Filters\ComplexFilter.cs" />
     <Compile Include="Filters\EnumExactFilter.cs" />
     <Compile Include="Filters\ExactFilter.cs" />

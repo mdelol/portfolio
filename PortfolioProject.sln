@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateDatabase", "CreateDat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Achievment", "Achievments\Achievment.csproj", "{224A0914-B6EF-4731-AC43-A5536D085298}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command", "Command\Command.csproj", "{7BC9E3CD-C8EE-4B21-8A64-9B1E0FF034F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commands", "Command\Commands.csproj", "{7BC9E3CD-C8EE-4B21-8A64-9B1E0FF034F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualTestApp", "VisualTestApp\VisualTestApp.csproj", "{67142DE5-538A-482B-887A-1C1C6F5F38D0}"
 EndProject

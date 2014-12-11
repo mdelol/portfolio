@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using Achievments;
 
-namespace Command.Filters
+namespace Commands.Filters
 {
+    /// <summary>
+    /// Базовый класс для фильтров
+    /// </summary>
     public abstract class BaseFilter
     {
         public int BaseFilterId { get; set; }

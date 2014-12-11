@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Achievments;
 
-namespace Command.Filters
+namespace Commands.Filters
 {
+    /// <summary>
+    /// Фильтр по точному совпадению
+    /// </summary>
     public class ExactFilter : BaseFilter
     {
 

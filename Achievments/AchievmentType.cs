@@ -2,6 +2,9 @@
 
 namespace Achievments
 {
+    /// <summary>
+    /// Тип достижения
+    /// </summary>
     [Flags]
     public enum AchievmentType
     {
