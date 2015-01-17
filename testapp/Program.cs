@@ -28,6 +28,7 @@ namespace testapp
             var f = new ExactFilter() { Type = a, ExactValue = "ololololo-lololo-lololo" };
             var g = new ExactFilter() {Type = a, ExactValue = "not funny at al"};
             var cf = new ComplexFilter() {Filters = new List<BaseFilter>() {f, g}};
+
             var command = new Command();
             command.Filters=new List<BaseFilter>()
             {

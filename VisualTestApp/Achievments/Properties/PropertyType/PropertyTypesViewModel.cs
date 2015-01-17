@@ -12,7 +12,7 @@ namespace VisualTestApp.Achievments.Properties.PropertyType
 
         public PropertyTypesViewModel()
         {
-            List<AchievmentPropertyType> achievmentPropertyTypes = PropertyTypesRepository.GetInstance().GetObjects();
+            var achievmentPropertyTypes = PropertyTypesRepository.GetInstance().GetObjects();
             PropertyTypes = achievmentPropertyTypes.Select(x => new PropertyTypeViewModel(x)).ToList();
             SelectedViewModel = PropertyTypes.FirstOrDefault();
         }
@@ -27,6 +27,11 @@ namespace VisualTestApp.Achievments.Properties.PropertyType
                 _selectedViewModel = value;
                 OnPropertyChanged("SelectedViewModel");
             }
+        }
+
+        public List<AchievmentPropertyType> GetModels()
+        {
+            return PropertyTypes.Select(x => x.GetModel()).ToList();
         }
     }
 }

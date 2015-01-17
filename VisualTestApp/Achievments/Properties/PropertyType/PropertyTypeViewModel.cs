@@ -8,6 +8,7 @@ namespace VisualTestApp.Achievments.Properties.PropertyType
     public class PropertyTypeViewModel : BaseViewModel
     {
         private AchievmentPropertyType _model;
+        private string _selectedType;
 
         public PropertyTypeViewModel(AchievmentPropertyType model)
             : this()
@@ -25,10 +26,23 @@ namespace VisualTestApp.Achievments.Properties.PropertyType
             Types.Add("Целочисленное значение", typeof(int).ToString());
         }
 
-        public String Name { get; set; }
+        public String Name
+        {
+            get { return _model.Name; }
+            set { _model.Name = value; }
+        }
 
         public Dictionary<string, string> Types { get; set; }
 
-        public string SelectedType { get; set; }
+        public string SelectedType
+        {
+            get { return _model.Type; }
+            set { _model.Type = value; }
+        }
+
+        public AchievmentPropertyType GetModel()
+        {
+            return _model;
+        }
     }
 }
