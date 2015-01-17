@@ -8,7 +8,7 @@ namespace Commands.Filters
     /// Фильтр, состоящий из нескольких однотипных фильтров, 
     /// TODO возможно, следует сделать дженериком
     /// </summary>
-    public class ComplexFilter:BaseFilter 
+    public class ComplexFilter : BaseFilter 
     {
         public override List<Achievment> Filter(IEnumerable<Achievment> achievments)
         {

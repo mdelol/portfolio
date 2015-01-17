@@ -15,7 +15,7 @@ namespace Achievments
         public virtual List<AchievmentProperty> Properties { get; set; }
 
         /// <summary>
-        /// Свойства только с возможностью выбора из фиксированныз значений
+        /// Свойства только с возможностью выбора из фиксированных значений
         /// </summary>
         public virtual List<EnumProperty> EnumProperties { get; set; } 
 

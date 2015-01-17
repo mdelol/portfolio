@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Achievments
+namespace Achievments.AchievmentProperties
 {
     /// <summary>
     /// Свойство достижения

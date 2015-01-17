@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Achievments;
+using Achievments.AchievmentProperties;
 
 namespace Commands.Filters
 {
