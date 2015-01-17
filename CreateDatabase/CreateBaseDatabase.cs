@@ -7,6 +7,7 @@ using Achievments.AchievmentProperties;
 using Commands;
 using DataLayer;
 using DataLayer.Repositories;
+using Commands.Filters;
 
 namespace CreateDatabase
 {
@@ -33,9 +34,18 @@ namespace CreateDatabase
 
             AchievmentsRepository.GetInstance().AddRange(new List<Achievment> { a, b });
 
+            // Command to DB
             var command = new Command();
+            var typeForFilter = PropertyTypesRepository.GetInstance().GetObjects().First();
+            var f = new ExactFilter() { Type = typeForFilter, ExactValue = "2013" };
+            var g = new ExactFilter() { Type = typeForFilter, ExactValue = "2014" };
+            var cf = new ComplexFilter() { Filters = new List<BaseFilter>() { f, g } };
+            command.Filters = new List<BaseFilter>()
+            {
+                cf
+            };
             command.Name = "testCommand";
-
+            CommandsRepository.GetInstance().AddObject(command);
         }
 
         private static Achievment GetFirstAchievment()
