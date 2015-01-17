@@ -69,6 +69,10 @@
       <Project>{C4015A7A-B717-4EE5-9C08-65F9D43FDACD}</Project>
       <Name>DataAccessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OutputDocuments\OutputDocuments.csproj">
+      <Project>{8C704D23-7CB7-438E-AEA6-335DF87D5EBF}</Project>
+      <Name>OutputDocuments</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
