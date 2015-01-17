@@ -43,7 +43,6 @@ namespace DataLayer.Repositories
                 return _db.SaveChanges();
             }
         }
-
         public override int AddRange(IEnumerable<AchievmentPropertyType> objects)
         {
             lock (_db)
@@ -51,6 +50,15 @@ namespace DataLayer.Repositories
                 _db.PropertyTypes.AddRange(objects);
                 return _db.SaveChanges();
             }
+        }
+
+        public int UpdateOrAddObject(AchievmentPropertyType obj)
+        {
+            if (!_db.PropertyTypes.Any(x => x.AchievmentPropertyTypeId == obj.AchievmentPropertyTypeId))
+            {
+                _db.PropertyTypes.Add(obj);
+            }
+            return _db.SaveChanges();
         }
     }
 }
