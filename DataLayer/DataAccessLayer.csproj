@@ -87,9 +87,14 @@
     <Compile Include="Migrations\201412091623044_complexfilter1.Designer.cs">
       <DependentUpon>201412091623044_complexfilter1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201501170514186_command.cs" />
+    <Compile Include="Migrations\201501170514186_command.Designer.cs">
+      <DependentUpon>201501170514186_command.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AchievmentsRepository.cs" />
     <Compile Include="AchievmentContext.cs" />
+    <Compile Include="Repositories\CommandsRepository.cs" />
     <Compile Include="Repositories\EnumPropertyTypesRepository.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412091623044_complexfilter1.resx">
       <DependentUpon>201412091623044_complexfilter1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501170514186_command.resx">
+      <DependentUpon>201501170514186_command.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

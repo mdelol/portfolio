@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Achievments;
 using Achievments.AchievmentProperties;
+using Commands;
 using Commands.Filters;
 using DataLayer;
 using DataLayer.Repositories;
@@ -25,9 +26,14 @@ namespace testapp
             var b = AchievmentsRepository.GetInstance().GetObjects();
             var a = PropertyTypesRepository.GetInstance().GetObjects().First();
             var f = new ExactFilter() { Type = a, ExactValue = "ololololo-lololo-lololo" };
-            var g = new ExactFilter() {Type = a, ExactValue = "not funny at all"};
+            var g = new ExactFilter() {Type = a, ExactValue = "not funny at al"};
             var cf = new ComplexFilter() {Filters = new List<BaseFilter>() {f, g}};
-            var result = cf.Filter(b);
+            var command = new Command();
+            command.Filters=new List<BaseFilter>()
+            {
+                cf
+            };
+            var result = command.Execute(b);
         }
 
         

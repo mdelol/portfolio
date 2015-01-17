@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using Achievments;
 using Achievments.AchievmentProperties;
+using Commands;
 using DataLayer;
 using DataLayer.Repositories;
 
@@ -31,6 +32,10 @@ namespace CreateDatabase
             var b = GetSecondAchievment();
 
             AchievmentsRepository.GetInstance().AddRange(new List<Achievment> { a, b });
+
+            var command = new Command();
+            command.Name = "testCommand";
+
         }
 
         private static Achievment GetFirstAchievment()

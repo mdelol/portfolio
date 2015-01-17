@@ -31,16 +31,16 @@ namespace Commands
         /// Выполнить команду
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Achievment> Execute()
+        public IEnumerable<Achievment> Execute(IEnumerable<Achievment> achievments = null)
         {
             var baseList = new List<Achievment>();
             if (ParentCommand != null)
             {
                 baseList.AddRange(ParentCommand.Execute());
             }
-            else
+            else if(achievments!=null)
             {
-                //Тут должно быть получение достижений для человека, который вызывает эту команду
+                baseList.AddRange(achievments);
             }
 
             var filters = new List<BaseFilter>(Filters);
