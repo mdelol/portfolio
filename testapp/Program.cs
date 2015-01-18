@@ -13,6 +13,7 @@ using Commands;
 using Commands.Filters;
 using DataLayer;
 using DataLayer.Repositories;
+using OutputDocuments;
 
 namespace testapp
 {
@@ -35,6 +36,19 @@ namespace testapp
                 cf
             };
             var result = command.Execute(b);
+            var commandForFilter = new Command
+            {
+                Filters = new List<BaseFilter>()
+                {
+                    cf
+                }
+            };
+            commandForFilter.Name = "myLittleCommand";
+            List<Command> listCmd = new List<Command>();
+            listCmd.Add(commandForFilter);
+
+            // Jaroslaw test :)
+            var resultOfFilter = DbToFilter.Filter(b, listCmd);
         }
 
         
