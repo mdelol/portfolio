@@ -12,7 +12,7 @@ using DataLayer.Repositories;
 namespace OutputDocuments
 {
     /// <summary>
-    /// Фильтруем достижения по командам и выдаем их в виде ключ => строка (имя команды => строка из id-шников соответствующих достижений)
+    /// Фильтруем достижения по командам и выдаем их в виде ключ => строка (имя команды => строка из Name соответствующих достижений)
     /// </summary>
     public class DbToFilter
     {
@@ -28,7 +28,7 @@ namespace OutputDocuments
             int i = 0;
             foreach (var dataOfCmd in resultCmd)
             {
-                stringOfCmd = String.Join(", ", dataOfCmd.Select(x => x.AchievmentId));
+                stringOfCmd = String.Join(", ", dataOfCmd.Select(x => x.Name));
                 result.Add(commands[i].Name, stringOfCmd);
             }     
             return result;
