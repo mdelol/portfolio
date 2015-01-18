@@ -4,7 +4,7 @@
         Title="StartWindow" Height="300" Width="300">
     <Grid>
         <Button Content="Команда" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="273" Click="ExportButtonClicked"/>
-        <Button Content="Достижения" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="273" Click="Button_Click_1"/>
+        <Button Content="Достижения" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="273" />
         <Button Content="Тип свойства достижения" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" Width="273"/>
         <Button Content="Экспорт" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" Width="273" Click="ExportButtonClicked"/>
     </Grid>
