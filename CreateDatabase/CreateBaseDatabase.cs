@@ -46,31 +46,31 @@ namespace CreateDatabase
             FillProperty(listAchievments[1], _numOfPagesPropertyTypeForPublic, "1982");
 
             listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
-            FillProperty(listAchievments[1], _namePropertyTypeForPublic, "Анекдот про Вовочку");
-            FillProperty(listAchievments[1], _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
-            FillProperty(listAchievments[1], _numOfPagesPropertyTypeForPublic, "42");
+            FillProperty(listAchievments[2], _namePropertyTypeForPublic, "Анекдот про Вовочку");
+            FillProperty(listAchievments[2], _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
+            FillProperty(listAchievments[2], _numOfPagesPropertyTypeForPublic, "42");
 
             listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
-            FillProperty(listAchievments[1], _namePropertyTypeForPublic, "Анекдот про Петечку");
-            FillProperty(listAchievments[1], _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
-            FillProperty(listAchievments[1], _numOfPagesPropertyTypeForPublic, "10");
+            FillProperty(listAchievments[3], _namePropertyTypeForPublic, "Анекдот про Петечку");
+            FillProperty(listAchievments[3], _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
+            FillProperty(listAchievments[3], _numOfPagesPropertyTypeForPublic, "10");
 
             listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
-            FillProperty(listAchievments[1], _namePropertyTypeForPublic, "Анекдот про Сережу");
-            FillProperty(listAchievments[1], _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
-            FillProperty(listAchievments[1], _numOfPagesPropertyTypeForPublic, "1982");
+            FillProperty(listAchievments[4], _namePropertyTypeForPublic, "Анекдот про Сережу");
+            FillProperty(listAchievments[4], _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
+            FillProperty(listAchievments[4], _numOfPagesPropertyTypeForPublic, "1982");
 
             listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Other));
-            FillProperty(listAchievments[2], _nameEventPropertyTypeForOther, "Катание на сноубордах");
-            FillProperty(listAchievments[2], _nameWorkPropertyTypeForOther, "Сказ о том, как я за один час 15 метров проехал");
+            FillProperty(listAchievments[5], _nameEventPropertyTypeForOther, "Катание на сноубордах");
+            FillProperty(listAchievments[5], _nameWorkPropertyTypeForOther, "Сказ о том, как я за один час 15 метров проехал");
 
             listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Other));
-            FillProperty(listAchievments[3], _nameEventPropertyTypeForOther, "Встреча мэра с детсадовцами");
-            FillProperty(listAchievments[3], _nameWorkPropertyTypeForOther, "Лекции о расточительстве и распиле госсердств. Пособие для молодежи дошкольного возраста");
+            FillProperty(listAchievments[6], _nameEventPropertyTypeForOther, "Встреча мэра с детсадовцами");
+            FillProperty(listAchievments[6], _nameWorkPropertyTypeForOther, "Лекции о расточительстве и распиле госсердств. Пособие для молодежи дошкольного возраста");
 
             listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Other));
-            FillProperty(listAchievments[4], _nameEventPropertyTypeForOther, "Просмотр нового Хоббита");
-            FillProperty(listAchievments[4], _nameWorkPropertyTypeForOther, "Как увеличить соотношение страниц на минуту экранного времени, чтобы все были счастливы");
+            FillProperty(listAchievments[7], _nameEventPropertyTypeForOther, "Просмотр нового Хоббита");
+            FillProperty(listAchievments[7], _nameWorkPropertyTypeForOther, "Как увеличить соотношение страниц на минуту экранного времени, чтобы все были счастливы");
 
             AchievmentsRepository.GetInstance().AddRange(listAchievments);
 
