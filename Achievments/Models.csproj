@@ -7,8 +7,8 @@
     <ProjectGuid>{224A0914-B6EF-4731-AC43-A5536D085298}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Achievments</RootNamespace>
-    <AssemblyName>Achievments</AssemblyName>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -40,13 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Achievment.cs" />
-    <Compile Include="AchievmentProperties\AchievmentProperty.cs" />
-    <Compile Include="AchievmentProperties\AchievmentPropertyType.cs" />
-    <Compile Include="AchievmentProperties\EnumProperty.cs" />
-    <Compile Include="AchievmentProperties\EnumPropertyType.cs" />
-    <Compile Include="AchievmentProperties\EnumPropertyTypeValue.cs" />
-    <Compile Include="AchievmentType.cs" />
+    <Compile Include="Achievments\Achievment.cs" />
+    <Compile Include="Achievments\AchievmentProperties\AchievmentProperty.cs" />
+    <Compile Include="Achievments\AchievmentProperties\AchievmentPropertyType.cs" />
+    <Compile Include="Achievments\AchievmentProperties\EnumProperty.cs" />
+    <Compile Include="Achievments\AchievmentProperties\EnumPropertyType.cs" />
+    <Compile Include="Achievments\AchievmentProperties\EnumPropertyTypeValue.cs" />
+    <Compile Include="Achievments\AchievmentType.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\Filters\BaseFilter.cs" />
+    <Compile Include="Commands\Filters\ComplexFilter.cs" />
+    <Compile Include="Commands\Filters\EnumExactFilter.cs" />
+    <Compile Include="Commands\Filters\ExactFilter.cs" />
+    <Compile Include="Commands\Filters\RangeFilter.cs" />
+    <Compile Include="Commands\Filters\TypeFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

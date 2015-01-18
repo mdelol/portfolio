@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Achievments;
-using Achievments.AchievmentProperties;
 using DataLayer.Repositories;
+using Models.Achievments;
+using Models.Achievments.AchievmentProperties;
 
 namespace DataLayer
 {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Achievments.AchievmentProperties
+﻿namespace Models.Achievments.AchievmentProperties
 {
     /// <summary>
     /// Свойство, доступное только для выбора, без возможности прямого вввода

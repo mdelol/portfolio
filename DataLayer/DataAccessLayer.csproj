@@ -48,6 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AchievmentsFactory.cs" />
+    <Compile Include="Migrations\201501181107112_InitialCreate.cs" />
+    <Compile Include="Migrations\201501181107112_InitialCreate.Designer.cs">
+      <DependentUpon>201501181107112_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501181108224_command.cs" />
+    <Compile Include="Migrations\201501181108224_command.Designer.cs">
+      <DependentUpon>201501181108224_command.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AchievmentsRepository.cs" />
     <Compile Include="AchievmentContext.cs" />
     <Compile Include="Repositories\CommandsRepository.cs" />
@@ -61,17 +70,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Achievments\Achievment.csproj">
+    <ProjectReference Include="..\Achievments\Models.csproj">
       <Project>{224A0914-B6EF-4731-AC43-A5536D085298}</Project>
-      <Name>Achievment</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Command\Commands.csproj">
-      <Project>{7bc9e3cd-c8ee-4b21-8a64-9b1e0ff034f9}</Project>
-      <Name>Commands</Name>
+      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <EmbeddedResource Include="Migrations\201501181107112_InitialCreate.resx">
+      <DependentUpon>201501181107112_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501181108224_command.resx">
+      <DependentUpon>201501181108224_command.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

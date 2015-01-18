@@ -7,12 +7,14 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using Achievments;
-using Achievments.AchievmentProperties;
 using Commands;
 using Commands.Filters;
 using DataLayer;
 using DataLayer.Repositories;
+using Models.Achievments;
+using Models.Achievments.AchievmentProperties;
+using Models.Commands;
+using Models.Commands.Filters;
 using OutputDocuments;
 
 namespace testapp

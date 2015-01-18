@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Commands.Filters;
+using Models.Commands.Filters;
 
-namespace Achievments.AchievmentProperties
+namespace Models.Achievments.AchievmentProperties
 {
     /// <summary>
     /// Тип свойства достижения
@@ -22,7 +24,8 @@ namespace Achievments.AchievmentProperties
         public string Type { get; set; }
 
         public virtual ICollection<AchievmentProperty> Properties { get; set; }
-        public virtual ICollection<TypeFilter> Properties { get; set; } 
+
+        public virtual ICollection<TypeFilter> TypeFilters { get; set; } 
 
 
         /// <summary>

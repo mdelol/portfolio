@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Achievments.AchievmentProperties
+namespace Models.Achievments.AchievmentProperties
 {
     /// <summary>
     /// Тип enum - свойства

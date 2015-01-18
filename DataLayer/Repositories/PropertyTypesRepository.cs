@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Achievments;
-using Achievments.AchievmentProperties;
+using Models.Achievments.AchievmentProperties;
 
 namespace DataLayer.Repositories
 {

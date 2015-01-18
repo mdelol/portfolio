@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Achievments.AchievmentProperties;
+﻿using System.Collections.Generic;
+using Models.Achievments.AchievmentProperties;
 
-namespace Achievments
+namespace Models.Achievments
 {
     /// <summary>
     /// Достижение

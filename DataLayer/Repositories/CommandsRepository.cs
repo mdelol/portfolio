@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using Commands;
 using Commands.Filters;
+using Models.Commands;
+using Models.Commands.Filters;
 
 namespace DataLayer.Repositories
 {
@@ -32,12 +35,23 @@ namespace DataLayer.Repositories
             lock (_db)
             {
 
-                foreach (var typeFilter in command.Filters.OfType<TypeFilter>())
+                PrepareTypes(command.Filters.OfType<TypeFilter>());
+
+                foreach (var complexFilter in command.Filters.OfType<ComplexFilter>())
                 {
-                    typeFilter.Type = _db.PropertyTypes.First(x => x.AchievmentPropertyTypeId == typeFilter.Type.AchievmentPropertyTypeId);
+                    PrepareTypes(complexFilter.Filters.OfType<TypeFilter>());
                 }
                 _db.Commands.Add(command);
                 return _db.SaveChanges();
+            }
+        }
+
+        private static void PrepareTypes(IEnumerable<TypeFilter> filters)
+        {
+            foreach (var typeFilter in filters)
+            {
+                typeFilter.Type =
+                    _db.PropertyTypes.First(x => x.AchievmentPropertyTypeId == typeFilter.Type.AchievmentPropertyTypeId);
             }
         }
 

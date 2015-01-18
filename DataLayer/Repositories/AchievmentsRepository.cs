@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using Achievments;
-using Achievments.AchievmentProperties;
+using Models.Achievments;
 
 namespace DataLayer.Repositories
 {

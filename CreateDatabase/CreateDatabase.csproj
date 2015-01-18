@@ -57,13 +57,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Achievments\Achievment.csproj">
+    <ProjectReference Include="..\Achievments\Models.csproj">
       <Project>{224a0914-b6ef-4731-ac43-a5536d085298}</Project>
-      <Name>Achievment</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Command\Commands.csproj">
-      <Project>{7BC9E3CD-C8EE-4B21-8A64-9B1E0FF034F9}</Project>
-      <Name>Commands</Name>
+      <Name>Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataLayer\DataAccessLayer.csproj">
       <Project>{c4015a7a-b717-4ee5-9c08-65f9d43fdacd}</Project>

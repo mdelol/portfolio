@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using Achievments;
-using Achievments.AchievmentProperties;
 using Commands;
 using DataLayer;
 using DataLayer.Repositories;
 using Commands.Filters;
+using Models.Achievments;
+using Models.Achievments.AchievmentProperties;
+using Models.Commands;
+using Models.Commands.Filters;
 
 namespace CreateDatabase
 {

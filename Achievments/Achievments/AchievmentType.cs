@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace Achievments
+namespace Models.Achievments
 {
     /// <summary>
     /// Тип достижения

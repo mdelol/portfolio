@@ -1,4 +1,4 @@
-﻿namespace Achievments.AchievmentProperties
+﻿namespace Models.Achievments.AchievmentProperties
 {
     /// <summary>
     /// Значение enum - свойства
