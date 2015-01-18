@@ -35,16 +35,16 @@ namespace CreateDatabase
 
             AchievmentsRepository.GetInstance().AddRange(listAchievments);
 
-            //var command = GetFirstCommand();
+            var command = GetFirstCommand();
 
-            //CommandsRepository.GetInstance().AddObject(command);
+            CommandsRepository.GetInstance().AddObject(command);
         }
 
         private static Command GetFirstCommand()
         {
 // Command to DB
             var command = new Command();
-            var typeForFilter = PropertyTypesRepository.GetInstance().GetObjects().First();
+            var typeForFilter = PropertyTypesRepository.GetInstance().GetNoTrackingObjects().First();
             var f = new ExactFilter() {Type = typeForFilter, ExactValue = "2013"};
             var g = new ExactFilter() {Type = typeForFilter, ExactValue = "2014"};
             var cf = new ComplexFilter() {Filters = new List<BaseFilter>() {f, g}};

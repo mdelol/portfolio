@@ -36,6 +36,10 @@ namespace DataLayer.Repositories
         {
             lock (_db)
             {
+                foreach (var property in achievment.Properties)
+                {
+                    property.Type = _db.PropertyTypes.First(x => x.AchievmentPropertyTypeId == property.Type.AchievmentPropertyTypeId);
+                }
                 _db.Achievments.Add(achievment);
                 return _db.SaveChanges();
             }
@@ -45,6 +49,13 @@ namespace DataLayer.Repositories
         {
             lock (_db)
             {
+                foreach (var achievment in objects)
+                {
+                    foreach (var property in achievment.Properties)
+                    {
+                        property.Type = _db.PropertyTypes.First(x => x.AchievmentPropertyTypeId == property.Type.AchievmentPropertyTypeId);
+                    }
+                }
                 _db.Achievments.AddRange(objects);
                 return _db.SaveChanges();
             }

@@ -46,6 +46,7 @@
     <Compile Include="Filters\ExactFilter.cs" />
     <Compile Include="Filters\BaseFilter.cs" />
     <Compile Include="Filters\RangeFilter.cs" />
+    <Compile Include="Filters\TypeFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

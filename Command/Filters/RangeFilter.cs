@@ -9,7 +9,7 @@ namespace Commands.Filters
     /// <summary>
     /// фильтр по диапазону
     /// </summary>
-    public class RangeFilter : BaseFilter
+    public class RangeFilter : TypeFilter
     {
         public override List<Achievment> Filter(IEnumerable<Achievment> achievments)
         {
@@ -23,7 +23,5 @@ namespace Commands.Filters
         public double LowerValue { get; set; }
 
         public double UpperValue { get; set; }
-
-        public virtual AchievmentPropertyType Type { get; set; }
     }
 }

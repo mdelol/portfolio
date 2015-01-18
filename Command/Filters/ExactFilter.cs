@@ -8,7 +8,7 @@ namespace Commands.Filters
     /// <summary>
     /// Фильтр по точному совпадению
     /// </summary>
-    public class ExactFilter : BaseFilter
+    public class ExactFilter : TypeFilter
     {
 
         public override List<Achievment> Filter(IEnumerable<Achievment> achievments)
@@ -18,8 +18,6 @@ namespace Commands.Filters
                 && property.Value == ExactValue))
                 .ToList();
         }
-
-        public virtual AchievmentPropertyType Type { get; set; }
 
         public string ExactValue { get; set; }
 

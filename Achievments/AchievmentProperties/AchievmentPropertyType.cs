@@ -21,7 +21,9 @@ namespace Achievments.AchievmentProperties
         /// </summary>
         public string Type { get; set; }
 
-        public virtual ICollection<AchievmentProperty> Properties { get; set; } 
+        public virtual ICollection<AchievmentProperty> Properties { get; set; }
+        public virtual ICollection<TypeFilter> Properties { get; set; } 
+
 
         /// <summary>
         /// Для каких достижений может применяться
