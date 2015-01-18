@@ -35,42 +35,52 @@ namespace CreateDatabase
 
             // Create concrete achievments with concrete properties
 
-            listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
-            FillProperty(listAchievments[0], _namePropertyTypeForPublic, "Трактат о пользе пивного брюшка в проектировании программного обеспечения");
-            FillProperty(listAchievments[0], _namePublisherPropertyTypeForPublic, "Том-книга");
-            FillProperty(listAchievments[0], _numOfPagesPropertyTypeForPublic, "42");
+            var sampleAchievment = new Achievment();
 
-            listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
-            FillProperty(listAchievments[1], _namePropertyTypeForPublic, "Песенник для шестиструнной гитары PHP-разработчиков");
-            FillProperty(listAchievments[1], _namePublisherPropertyTypeForPublic, "МосИздатМукулатура имени Ленина");
-            FillProperty(listAchievments[1], _numOfPagesPropertyTypeForPublic, "1982");
+            sampleAchievment = AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication);
+            listAchievments.Add(sampleAchievment);
+            FillProperty(sampleAchievment, _namePropertyTypeForPublic, "Трактат о пользе пивного брюшка в проектировании программного обеспечения");
+            FillProperty(sampleAchievment, _namePublisherPropertyTypeForPublic, "Том-книга");
+            FillProperty(sampleAchievment, _numOfPagesPropertyTypeForPublic, "42");
 
-            listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
-            FillProperty(listAchievments[2], _namePropertyTypeForPublic, "Анекдот про Вовочку");
-            FillProperty(listAchievments[2], _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
-            FillProperty(listAchievments[2], _numOfPagesPropertyTypeForPublic, "42");
+            sampleAchievment = AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication);
+            listAchievments.Add(sampleAchievment);
+            FillProperty(sampleAchievment, _namePropertyTypeForPublic, "Песенник для шестиструнной гитары PHP-разработчиков");
+            FillProperty(sampleAchievment, _namePublisherPropertyTypeForPublic, "МосИздатМукулатура имени Ленина");
+            FillProperty(sampleAchievment, _numOfPagesPropertyTypeForPublic, "1982");
 
-            listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
-            FillProperty(listAchievments[3], _namePropertyTypeForPublic, "Анекдот про Петечку");
-            FillProperty(listAchievments[3], _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
-            FillProperty(listAchievments[3], _numOfPagesPropertyTypeForPublic, "10");
+            sampleAchievment = AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication);
+            listAchievments.Add(sampleAchievment);
+            FillProperty(sampleAchievment, _namePropertyTypeForPublic, "Анекдот про Вовочку");
+            FillProperty(sampleAchievment, _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
+            FillProperty(sampleAchievment, _numOfPagesPropertyTypeForPublic, "42");
 
-            listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
-            FillProperty(listAchievments[4], _namePropertyTypeForPublic, "Анекдот про Сережу");
-            FillProperty(listAchievments[4], _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
-            FillProperty(listAchievments[4], _numOfPagesPropertyTypeForPublic, "1982");
+            sampleAchievment = AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication);
+            listAchievments.Add(sampleAchievment);
+            FillProperty(sampleAchievment, _namePropertyTypeForPublic, "Анекдот про Петечку");
+            FillProperty(sampleAchievment, _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
+            FillProperty(sampleAchievment, _numOfPagesPropertyTypeForPublic, "10");
 
-            listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Other));
-            FillProperty(listAchievments[5], _nameEventPropertyTypeForOther, "Катание на сноубордах");
-            FillProperty(listAchievments[5], _nameWorkPropertyTypeForOther, "Сказ о том, как я за один час 15 метров проехал");
+            sampleAchievment = AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication);
+            listAchievments.Add(sampleAchievment);
+            FillProperty(sampleAchievment, _namePropertyTypeForPublic, "Анекдот про Сережу");
+            FillProperty(sampleAchievment, _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
+            FillProperty(sampleAchievment, _numOfPagesPropertyTypeForPublic, "1982");
 
-            listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Other));
-            FillProperty(listAchievments[6], _nameEventPropertyTypeForOther, "Встреча мэра с детсадовцами");
-            FillProperty(listAchievments[6], _nameWorkPropertyTypeForOther, "Лекции о расточительстве и распиле госсердств. Пособие для молодежи дошкольного возраста");
+            sampleAchievment = AchievmentsFactory.GetEmptyAchievment(AchievmentType.Other);
+            listAchievments.Add(sampleAchievment);
+            FillProperty(sampleAchievment, _nameEventPropertyTypeForOther, "Катание на сноубордах");
+            FillProperty(sampleAchievment, _nameWorkPropertyTypeForOther, "Сказ о том, как я за один час 15 метров проехал");
 
-            listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Other));
-            FillProperty(listAchievments[7], _nameEventPropertyTypeForOther, "Просмотр нового Хоббита");
-            FillProperty(listAchievments[7], _nameWorkPropertyTypeForOther, "Как увеличить соотношение страниц на минуту экранного времени, чтобы все были счастливы");
+            sampleAchievment = AchievmentsFactory.GetEmptyAchievment(AchievmentType.Other);
+            listAchievments.Add(sampleAchievment);
+            FillProperty(sampleAchievment, _nameEventPropertyTypeForOther, "Встреча мэра с детсадовцами");
+            FillProperty(sampleAchievment, _nameWorkPropertyTypeForOther, "Лекции о расточительстве и распиле госсердств. Пособие для молодежи дошкольного возраста");
+
+            sampleAchievment = AchievmentsFactory.GetEmptyAchievment(AchievmentType.Other);
+            listAchievments.Add(sampleAchievment);
+            FillProperty(sampleAchievment, _nameEventPropertyTypeForOther, "Просмотр нового Хоббита");
+            FillProperty(sampleAchievment, _nameWorkPropertyTypeForOther, "Как увеличить соотношение страниц на минуту экранного времени, чтобы все были счастливы");
 
             AchievmentsRepository.GetInstance().AddRange(listAchievments);
 
