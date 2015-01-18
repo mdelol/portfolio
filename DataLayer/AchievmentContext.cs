@@ -18,6 +18,13 @@ namespace DataLayer
     /// </summary>
         public class AchievmentContext : DbContext
         {
+            protected override void OnModelCreating(DbModelBuilder modelBuilder)
+            {
+                modelBuilder.Entity<Achievment>().HasMany(x=>x.Properties).WithOptional().WillCascadeOnDelete(true);
+                modelBuilder.Entity<Achievment>().HasMany(x => x.EnumProperties).WithOptional().WillCascadeOnDelete(true);
+
+            }
+
             public DbSet<Achievment> Achievments { get; set; }
 
             public DbSet<AchievmentPropertyType> PropertyTypes { get; set; }

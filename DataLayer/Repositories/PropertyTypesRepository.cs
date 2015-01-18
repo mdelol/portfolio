@@ -61,7 +61,7 @@ namespace DataLayer.Repositories
             return _db.SaveChanges();
         }
 
-        public int DeleteObject(AchievmentPropertyType obj)
+        public override int DeleteObject(AchievmentPropertyType obj)
         {
             _db.PropertyTypes.Remove(obj);
             return _db.SaveChanges();

@@ -19,9 +19,12 @@ namespace DatabaseVisualiser.Achievments
         {
             Achievments = new ObservableCollection<AchievmentViewModel>(AchievmentsRepository.GetInstance().GetObjects().Select(x => new AchievmentViewModel(x)));
             SelectedAchievment = Achievments.FirstOrDefault();
+            DeletedAchievments=new List<AchievmentViewModel>();
         }
 
         public ObservableCollection<AchievmentViewModel> Achievments { get; set; }
+
+        public List<AchievmentViewModel> DeletedAchievments { get; set; }
 
         public AchievmentViewModel SelectedAchievment
         {
@@ -44,6 +47,23 @@ namespace DatabaseVisualiser.Achievments
                     {
                         Achievments.Add(new AchievmentViewModel(AchievmentsFactory.GetEmptyAchievment(dialog.SelectedType)));
                     }
+                });
+            }
+        }
+
+        public ICommand DeleteCommand
+        {
+            get
+            {
+                return new RelayCommand((x) =>
+                {
+                    if (SelectedAchievment.GetModel().AchievmentId != 0)
+                    {
+                        DeletedAchievments.Add(SelectedAchievment);
+                        Achievments.Remove(SelectedAchievment);
+                        SelectedAchievment = Achievments.FirstOrDefault();
+                    }
+                    OnPropertyChanged("Achievments");
                 });
             }
         }

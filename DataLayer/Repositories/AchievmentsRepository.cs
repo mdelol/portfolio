@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using Achievments;
+using Achievments.AchievmentProperties;
 
 namespace DataLayer.Repositories
 {
@@ -55,6 +56,12 @@ namespace DataLayer.Repositories
             {
                 _db.Achievments.Add(obj);
             }
+            return _db.SaveChanges();
+        }
+
+        public override int DeleteObject(Achievment obj)
+        {
+            _db.Achievments.Remove(obj);
             return _db.SaveChanges();
         }
     }
