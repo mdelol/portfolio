@@ -54,6 +54,10 @@ namespace DataLayer.Repositories
         {
             if (!_db.Achievments.Any(x => x.AchievmentId == obj.AchievmentId))
             {
+                foreach (var property in obj.Properties)
+                {
+                    property.Type = _db.PropertyTypes.First(x => x.AchievmentPropertyTypeId == property.Type.AchievmentPropertyTypeId);
+                }
                 _db.Achievments.Add(obj);
             }
             return _db.SaveChanges();

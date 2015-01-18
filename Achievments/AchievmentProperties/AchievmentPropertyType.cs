@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Achievments.AchievmentProperties
 {
@@ -19,6 +20,8 @@ namespace Achievments.AchievmentProperties
         /// Тип, для восстановления значения из строки
         /// </summary>
         public string Type { get; set; }
+
+        public virtual ICollection<AchievmentProperty> Properties { get; set; } 
 
         /// <summary>
         /// Для каких достижений может применяться

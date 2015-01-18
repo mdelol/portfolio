@@ -35,6 +35,14 @@ namespace DataLayer.Repositories
             }
         }
 
+        public List<AchievmentPropertyType> GetNoTrackingObjects()
+        {
+            lock (_db)
+            {
+                return _db.PropertyTypes.AsNoTracking().ToList();
+            }
+        }
+
         public override int AddObject(AchievmentPropertyType obj)
         {
             lock (_db)

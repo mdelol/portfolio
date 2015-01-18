@@ -34,9 +34,9 @@ namespace CreateDatabase
 
             AchievmentsRepository.GetInstance().AddRange(new List<Achievment> { a, b });
 
-            var command = GetFirstCommand();
+            //var command = GetFirstCommand();
 
-            CommandsRepository.GetInstance().AddObject(command);
+            //CommandsRepository.GetInstance().AddObject(command);
         }
 
         private static Command GetFirstCommand()

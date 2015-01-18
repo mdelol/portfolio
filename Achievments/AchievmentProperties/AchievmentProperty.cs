@@ -18,6 +18,8 @@ namespace Achievments.AchievmentProperties
         /// </summary>
         public virtual AchievmentPropertyType Type { get; set; }
 
+        public int TypeId { get; set; }
+
         public int AchievmentPropertyId { get; set; }
 
         public virtual Achievment Achievment { get; set; }

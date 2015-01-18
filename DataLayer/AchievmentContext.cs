@@ -21,8 +21,8 @@ namespace DataLayer
             protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {
                 modelBuilder.Entity<Achievment>().HasMany(x=>x.Properties).WithOptional().WillCascadeOnDelete(true);
+                modelBuilder.Entity<AchievmentProperty>().HasRequired(x => x.Type).WithMany(x=>x.Properties).HasForeignKey(x=>x.TypeId).WillCascadeOnDelete(false);
                 modelBuilder.Entity<Achievment>().HasMany(x => x.EnumProperties).WithOptional().WillCascadeOnDelete(true);
-
             }
 
             public DbSet<Achievment> Achievments { get; set; }
