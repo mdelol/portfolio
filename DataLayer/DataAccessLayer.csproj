@@ -96,6 +96,14 @@
     <Compile Include="Migrations\201501171320391_achievmentName.Designer.cs">
       <DependentUpon>201501171320391_achievmentName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201501180717424_cascadedelete.cs" />
+    <Compile Include="Migrations\201501180717424_cascadedelete.Designer.cs">
+      <DependentUpon>201501180717424_cascadedelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501180723543_cascadedelete2.cs" />
+    <Compile Include="Migrations\201501180723543_cascadedelete2.Designer.cs">
+      <DependentUpon>201501180723543_cascadedelete2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AchievmentsRepository.cs" />
     <Compile Include="AchievmentContext.cs" />
@@ -155,6 +163,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201501171320391_achievmentName.resx">
       <DependentUpon>201501171320391_achievmentName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501180717424_cascadedelete.resx">
+      <DependentUpon>201501180717424_cascadedelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501180723543_cascadedelete2.resx">
+      <DependentUpon>201501180723543_cascadedelete2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

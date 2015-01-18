@@ -6,12 +6,12 @@
              xmlns:properties="clr-namespace:DatabaseVisualiser.Achievments.Properties"
              mc:Ignorable="d" 
              Height="300" 
-             Width="400">
+             Width="800">
     <Grid>
         
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -63,8 +63,9 @@
             </ItemsControl>
         </Grid>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="4">
-            <Button Content="Добавить" Command="{Binding AddCommand}" Margin="4"/>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="4" Orientation="Horizontal">
+            <Button Content="Добавить" Command="{Binding AddCommand}" Margin="4" Width="60"/>
+            <Button Content="Удалить" Command="{Binding DeleteCommand}" Margin="4" Width="60"/>
         </StackPanel>
     </Grid>
 </Window>

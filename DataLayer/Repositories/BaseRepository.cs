@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Achievments.AchievmentProperties;
 
 namespace DataLayer.Repositories
 {
@@ -23,5 +24,7 @@ namespace DataLayer.Repositories
             _db.SaveChanges();
             _db.Dispose();
         }
+
+        public abstract int DeleteObject(T obj);
     }
 }

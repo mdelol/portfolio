@@ -52,5 +52,11 @@ namespace DataLayer.Repositories
             }
             return _db.SaveChanges();
         }
+
+        public override int DeleteObject(Command obj)
+        {
+            _db.Commands.Remove(obj);
+            return _db.SaveChanges();
+        }
     }
 }

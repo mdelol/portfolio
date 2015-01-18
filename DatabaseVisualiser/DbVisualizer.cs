@@ -16,10 +16,10 @@ namespace DatabaseVisualiser
             window.ShowDialog();
 
             var propertyTypesRepository = PropertyTypesRepository.GetInstance();
-            var viewModels = propertyTypesViewModel.GetModels();
-            foreach (var achievmentPropertyType in viewModels)
+            var models = propertyTypesViewModel.GetModels();
+            foreach (var propertyType in models)
             {
-                propertyTypesRepository.UpdateOrAddObject(achievmentPropertyType);
+                propertyTypesRepository.UpdateOrAddObject(propertyType);
             }
 
             var deletedViewModels = propertyTypesViewModel.DeletedViewModels;
@@ -38,7 +38,18 @@ namespace DatabaseVisualiser
             };
             window.ShowDialog();
 
+            var achievmentsRepository = AchievmentsRepository.GetInstance();
+            var models = achievmentsViewModel.GetModels();
+            foreach (var achievment in models)
+            {
+                achievmentsRepository.UpdateOrAddObject(achievment);
+            }
 
+            var deletedViewModels = achievmentsViewModel.DeletedAchievments;
+            foreach (var achievmentViewModel in deletedViewModels)
+            {
+                achievmentsRepository.DeleteObject(achievmentViewModel.GetModel());
+            }
         }
     }
 }

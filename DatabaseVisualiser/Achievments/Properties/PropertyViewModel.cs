@@ -20,11 +20,12 @@ namespace DatabaseVisualiser.Achievments.Properties
         {
             get
             {
-                return (string)Convert.ChangeType(_value, typeof(string));
+                return _model.Value;
             }
             set
             {
                 _value = Convert.ChangeType(value, Type.GetType(_model.Type.Type));
+                _model.Value = Convert.ToString(_value);
             }
         }
 

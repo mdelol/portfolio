@@ -58,5 +58,11 @@ namespace DataLayer.Repositories
             }
             return _db.SaveChanges();
         }
+
+        public override int DeleteObject(EnumPropertyType obj)
+        {
+            _db.EnumPropertyTypes.Remove(obj);
+            return _db.SaveChanges();
+        }
     }
 }
