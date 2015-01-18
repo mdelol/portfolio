@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -26,17 +27,75 @@ namespace CreateDatabase
         private static void Main(string[] args)
         {
             var listAchievments = new List<Achievment>();
+
+            // Create abstract properties for Achiev types - publication and other
             CreateProperties();
+
+            // Create concrete achievments with concrete properties
+
             listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
+            FillProperty(listAchievments[0], _namePropertyTypeForPublic, "Трактат о пользе пивного брюшка в проектировании программного обеспечения");
+            FillProperty(listAchievments[0], _namePublisherPropertyTypeForPublic, "Том-книга");
+            FillProperty(listAchievments[0], _numOfPagesPropertyTypeForPublic, "42");
+
             listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
+            FillProperty(listAchievments[1], _namePropertyTypeForPublic, "Песенник для шестиструнной гитары PHP-разработчиков");
+            FillProperty(listAchievments[1], _namePublisherPropertyTypeForPublic, "МосИздатМукулатура имени Ленина");
+            FillProperty(listAchievments[1], _numOfPagesPropertyTypeForPublic, "1982");
+
+            listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
+            FillProperty(listAchievments[1], _namePropertyTypeForPublic, "Анекдот про Вовочку");
+            FillProperty(listAchievments[1], _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
+            FillProperty(listAchievments[1], _numOfPagesPropertyTypeForPublic, "42");
+
+            listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
+            FillProperty(listAchievments[1], _namePropertyTypeForPublic, "Анекдот про Петечку");
+            FillProperty(listAchievments[1], _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
+            FillProperty(listAchievments[1], _numOfPagesPropertyTypeForPublic, "10");
+
+            listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Publication));
+            FillProperty(listAchievments[1], _namePropertyTypeForPublic, "Анекдот про Сережу");
+            FillProperty(listAchievments[1], _namePublisherPropertyTypeForPublic, "КомедиКлабПресс");
+            FillProperty(listAchievments[1], _numOfPagesPropertyTypeForPublic, "1982");
+
             listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Other));
+            FillProperty(listAchievments[2], _nameEventPropertyTypeForOther, "Катание на сноубордах");
+            FillProperty(listAchievments[2], _nameWorkPropertyTypeForOther, "Сказ о том, как я за один час 15 метров проехал");
+
             listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Other));
+            FillProperty(listAchievments[3], _nameEventPropertyTypeForOther, "Встреча мэра с детсадовцами");
+            FillProperty(listAchievments[3], _nameWorkPropertyTypeForOther, "Лекции о расточительстве и распиле госсердств. Пособие для молодежи дошкольного возраста");
+
             listAchievments.Add(AchievmentsFactory.GetEmptyAchievment(AchievmentType.Other));
+            FillProperty(listAchievments[4], _nameEventPropertyTypeForOther, "Просмотр нового Хоббита");
+            FillProperty(listAchievments[4], _nameWorkPropertyTypeForOther, "Как увеличить соотношение страниц на минуту экранного времени, чтобы все были счастливы");
 
             AchievmentsRepository.GetInstance().AddRange(listAchievments);
 
-            var command = GetFirstCommand();
+            //var command = GetFirstCommand();
 
+            // Create commands for testing
+            var command = new Command();
+            var typeForFilter = PropertyTypesRepository.GetInstance().GetObjects().First(a => a == _numOfPagesPropertyTypeForPublic);
+            var f = new ExactFilter() { Type = typeForFilter, ExactValue = "42" };
+            var g = new ExactFilter() { Type = typeForFilter, ExactValue = "1982" };
+            var cf = new ComplexFilter() { Filters = new List<BaseFilter>() { f, g } };
+            command.Filters = new List<BaseFilter>()
+            {
+                cf
+            };
+            command.Name = "cmdTake__Prop_NumPages__With_42and1982";
+            CommandsRepository.GetInstance().AddObject(command);
+
+            command = new Command();
+            typeForFilter = PropertyTypesRepository.GetInstance().GetObjects().First(a => a == _namePublisherPropertyTypeForPublic);
+            f = new ExactFilter() { Type = typeForFilter, ExactValue = "КомедиКлабПресс" };
+            cf = new ComplexFilter() { Filters = new List<BaseFilter>() { f } };
+            command.Filters = new List<BaseFilter>()
+            {
+                cf
+            };
+            command.Name = "cmdTake__Prop_NamePublisher__With_ComedyClubPress";
             CommandsRepository.GetInstance().AddObject(command);
         }
 
@@ -72,6 +131,11 @@ namespace CreateDatabase
                 _nameEventPropertyTypeForOther,
                 _nameWorkPropertyTypeForOther
             });
+        }
+
+        public static void FillProperty(Achievment achievment, AchievmentPropertyType achievmentPropertyType, string value)
+        {
+            achievment.Properties.First(a => a.Type == achievmentPropertyType).Value = value;
         }
     }
 }
