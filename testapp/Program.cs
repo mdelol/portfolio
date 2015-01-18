@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -51,6 +52,8 @@ namespace testapp
 
             // Jaroslaw test :)
             var resultOfFilter = DbToFilter.Filter(b, listCmd);
+            testOutput();
+            
         }
 
         
@@ -77,6 +80,18 @@ namespace testapp
             var va = new XmlSerializer(typeof (Achievment));
             var writer = new StreamWriter("C:/Users/Сергей/Desktop/test.xml");
             va.Serialize(writer, a);
+        }
+
+        private static void testOutput()
+        {
+            const string pathToFile = "E:/testags.docx";
+            var achievments = AchievmentsRepository.GetInstance().GetObjects();
+            var commands = CommandsRepository.GetInstance().GetObjects();
+            var command = commands.First();
+            var listCmd = new List<Command>();
+            listCmd.Add(command);
+            var dictionary = DbToFilter.Filter(achievments, listCmd);
+            Formatter.ReplaceTextInDocument(dictionary,pathToFile);
         }
     }
 }
