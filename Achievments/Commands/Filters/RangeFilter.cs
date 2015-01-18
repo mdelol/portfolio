@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Achievments;
-using Achievments.AchievmentProperties;
+using Commands.Filters;
+using Models.Achievments;
 
-namespace Commands.Filters
+namespace Models.Commands.Filters
 {
     /// <summary>
     /// фильтр по диапазону

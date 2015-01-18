@@ -1,8 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
-using Achievments;
-using Achievments.AchievmentProperties;
 using DatabaseVisualiser.Achievments.Properties;
+using Models.Achievments;
 using VisualTestApp.Common;
 
 namespace DatabaseVisualiser.Achievments

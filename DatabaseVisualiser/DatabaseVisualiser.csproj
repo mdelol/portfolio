@@ -89,9 +89,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Achievments\Achievment.csproj">
+    <ProjectReference Include="..\Achievments\Models.csproj">
       <Project>{224A0914-B6EF-4731-AC43-A5536D085298}</Project>
-      <Name>Achievment</Name>
+      <Name>Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataLayer\DataAccessLayer.csproj">
       <Project>{C4015A7A-B717-4EE5-9C08-65F9D43FDACD}</Project>

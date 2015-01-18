@@ -48,61 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AchievmentsFactory.cs" />
-    <Compile Include="Migrations\201412011657107_InitialCreate.cs" />
-    <Compile Include="Migrations\201412011657107_InitialCreate.Designer.cs">
-      <DependentUpon>201412011657107_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201501181107112_InitialCreate.cs" />
+    <Compile Include="Migrations\201501181107112_InitialCreate.Designer.cs">
+      <DependentUpon>201501181107112_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201412021702569_refactor.cs" />
-    <Compile Include="Migrations\201412021702569_refactor.Designer.cs">
-      <DependentUpon>201412021702569_refactor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412031549075_filters.cs" />
-    <Compile Include="Migrations\201412031549075_filters.Designer.cs">
-      <DependentUpon>201412031549075_filters.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412031640516_rename.cs" />
-    <Compile Include="Migrations\201412031640516_rename.Designer.cs">
-      <DependentUpon>201412031640516_rename.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412031641454_virtual.cs" />
-    <Compile Include="Migrations\201412031641454_virtual.Designer.cs">
-      <DependentUpon>201412031641454_virtual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412041642066_ENumFilterCorrection.cs" />
-    <Compile Include="Migrations\201412041642066_ENumFilterCorrection.Designer.cs">
-      <DependentUpon>201412041642066_ENumFilterCorrection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412041650234_fix.cs" />
-    <Compile Include="Migrations\201412041650234_fix.Designer.cs">
-      <DependentUpon>201412041650234_fix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412041744183_ff.cs" />
-    <Compile Include="Migrations\201412041744183_ff.Designer.cs">
-      <DependentUpon>201412041744183_ff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412091518279_complexfilter.cs" />
-    <Compile Include="Migrations\201412091518279_complexfilter.Designer.cs">
-      <DependentUpon>201412091518279_complexfilter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412091623044_complexfilter1.cs" />
-    <Compile Include="Migrations\201412091623044_complexfilter1.Designer.cs">
-      <DependentUpon>201412091623044_complexfilter1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201501170514186_command.cs" />
-    <Compile Include="Migrations\201501170514186_command.Designer.cs">
-      <DependentUpon>201501170514186_command.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201501171320391_achievmentName.cs" />
-    <Compile Include="Migrations\201501171320391_achievmentName.Designer.cs">
-      <DependentUpon>201501171320391_achievmentName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201501180717424_cascadedelete.cs" />
-    <Compile Include="Migrations\201501180717424_cascadedelete.Designer.cs">
-      <DependentUpon>201501180717424_cascadedelete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201501180723543_cascadedelete2.cs" />
-    <Compile Include="Migrations\201501180723543_cascadedelete2.Designer.cs">
-      <DependentUpon>201501180723543_cascadedelete2.cs</DependentUpon>
+    <Compile Include="Migrations\201501181108224_command.cs" />
+    <Compile Include="Migrations\201501181108224_command.Designer.cs">
+      <DependentUpon>201501181108224_command.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AchievmentsRepository.cs" />
@@ -118,57 +70,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Achievments\Achievment.csproj">
+    <ProjectReference Include="..\Achievments\Models.csproj">
       <Project>{224A0914-B6EF-4731-AC43-A5536D085298}</Project>
-      <Name>Achievment</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Command\Commands.csproj">
-      <Project>{7bc9e3cd-c8ee-4b21-8a64-9b1e0ff034f9}</Project>
-      <Name>Commands</Name>
+      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201412011657107_InitialCreate.resx">
-      <DependentUpon>201412011657107_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201501181107112_InitialCreate.resx">
+      <DependentUpon>201501181107112_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412021702569_refactor.resx">
-      <DependentUpon>201412021702569_refactor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412031549075_filters.resx">
-      <DependentUpon>201412031549075_filters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412031640516_rename.resx">
-      <DependentUpon>201412031640516_rename.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412031641454_virtual.resx">
-      <DependentUpon>201412031641454_virtual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412041642066_ENumFilterCorrection.resx">
-      <DependentUpon>201412041642066_ENumFilterCorrection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412041650234_fix.resx">
-      <DependentUpon>201412041650234_fix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412041744183_ff.resx">
-      <DependentUpon>201412041744183_ff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412091518279_complexfilter.resx">
-      <DependentUpon>201412091518279_complexfilter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412091623044_complexfilter1.resx">
-      <DependentUpon>201412091623044_complexfilter1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201501170514186_command.resx">
-      <DependentUpon>201501170514186_command.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201501171320391_achievmentName.resx">
-      <DependentUpon>201501171320391_achievmentName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201501180717424_cascadedelete.resx">
-      <DependentUpon>201501180717424_cascadedelete.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201501180723543_cascadedelete2.resx">
-      <DependentUpon>201501180723543_cascadedelete2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201501181108224_command.resx">
+      <DependentUpon>201501181108224_command.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

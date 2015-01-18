@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using Achievments;
-using Achievments.AchievmentProperties;
+using Models.Achievments;
 
 namespace DataLayer.Repositories
 {
@@ -36,6 +35,10 @@ namespace DataLayer.Repositories
         {
             lock (_db)
             {
+                foreach (var property in achievment.Properties)
+                {
+                    property.Type = _db.PropertyTypes.First(x => x.AchievmentPropertyTypeId == property.Type.AchievmentPropertyTypeId);
+                }
                 _db.Achievments.Add(achievment);
                 return _db.SaveChanges();
             }
@@ -45,6 +48,13 @@ namespace DataLayer.Repositories
         {
             lock (_db)
             {
+                foreach (var achievment in objects)
+                {
+                    foreach (var property in achievment.Properties)
+                    {
+                        property.Type = _db.PropertyTypes.First(x => x.AchievmentPropertyTypeId == property.Type.AchievmentPropertyTypeId);
+                    }
+                }
                 _db.Achievments.AddRange(objects);
                 return _db.SaveChanges();
             }
@@ -54,6 +64,10 @@ namespace DataLayer.Repositories
         {
             if (!_db.Achievments.Any(x => x.AchievmentId == obj.AchievmentId))
             {
+                foreach (var property in obj.Properties)
+                {
+                    property.Type = _db.PropertyTypes.First(x => x.AchievmentPropertyTypeId == property.Type.AchievmentPropertyTypeId);
+                }
                 _db.Achievments.Add(obj);
             }
             return _db.SaveChanges();

@@ -111,9 +111,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Achievments\Achievment.csproj">
+    <ProjectReference Include="..\Achievments\Models.csproj">
       <Project>{224A0914-B6EF-4731-AC43-A5536D085298}</Project>
-      <Name>Achievment</Name>
+      <Name>Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\DatabaseVisualiser\DatabaseVisualiser.csproj">
       <Project>{84860101-2714-4a5a-bc4f-477ce169f8c0}</Project>

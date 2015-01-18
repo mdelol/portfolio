@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8206FD30-AD91-4DE8-BA1D-BD726888D6E3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{224A0914-B6EF-4731-AC43-A5536D085298}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>testapp</RootNamespace>
-    <AssemblyName>testapp</AssemblyName>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,14 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,26 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Achievments\Achievment.cs" />
+    <Compile Include="Achievments\AchievmentProperties\AchievmentProperty.cs" />
+    <Compile Include="Achievments\AchievmentProperties\AchievmentPropertyType.cs" />
+    <Compile Include="Achievments\AchievmentProperties\EnumProperty.cs" />
+    <Compile Include="Achievments\AchievmentProperties\EnumPropertyType.cs" />
+    <Compile Include="Achievments\AchievmentProperties\EnumPropertyTypeValue.cs" />
+    <Compile Include="Achievments\AchievmentType.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\Filters\BaseFilter.cs" />
+    <Compile Include="Commands\Filters\ComplexFilter.cs" />
+    <Compile Include="Commands\Filters\EnumExactFilter.cs" />
+    <Compile Include="Commands\Filters\ExactFilter.cs" />
+    <Compile Include="Commands\Filters\RangeFilter.cs" />
+    <Compile Include="Commands\Filters\TypeFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Achievments\Models.csproj">
-      <Project>{224A0914-B6EF-4731-AC43-A5536D085298}</Project>
-      <Name>Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataLayer\DataAccessLayer.csproj">
-      <Project>{C4015A7A-B717-4EE5-9C08-65F9D43FDACD}</Project>
-      <Name>DataAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OutputDocuments\OutputDocuments.csproj">
-      <Project>{8C704D23-7CB7-438E-AEA6-335DF87D5EBF}</Project>
-      <Name>OutputDocuments</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

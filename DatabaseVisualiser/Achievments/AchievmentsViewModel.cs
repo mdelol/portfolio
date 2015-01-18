@@ -3,10 +3,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Documents;
 using System.Windows.Input;
-using Achievments;
 using DatabaseVisualiser.Achievments.Properties;
 using DataLayer;
 using DataLayer.Repositories;
+using Models.Achievments;
 using VisualTestApp.Common;
 
 namespace DatabaseVisualiser.Achievments

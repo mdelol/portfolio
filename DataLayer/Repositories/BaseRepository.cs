@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Achievments.AchievmentProperties;
 
 namespace DataLayer.Repositories
 {
@@ -9,7 +8,7 @@ namespace DataLayer.Repositories
     /// </summary>
     public abstract class BaseRepository<T>:IDisposable where T : class
     {
-        protected AchievmentContext _db = new AchievmentContext();
+        protected static AchievmentContext _db = new AchievmentContext();
 
         public abstract List<T> GetObjects();
 

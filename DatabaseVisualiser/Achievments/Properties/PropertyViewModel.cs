@@ -1,5 +1,5 @@
 ﻿using System;
-using Achievments.AchievmentProperties;
+using Models.Achievments.AchievmentProperties;
 using VisualTestApp.Common;
 
 namespace DatabaseVisualiser.Achievments.Properties

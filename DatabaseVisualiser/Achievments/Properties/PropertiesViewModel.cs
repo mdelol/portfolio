@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Achievments;
 using DataLayer.Repositories;
+using Models.Achievments;
 using VisualTestApp.Common;
 
 namespace DatabaseVisualiser.Achievments.Properties

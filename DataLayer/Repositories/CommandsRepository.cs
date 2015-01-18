@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using Commands;
+using Commands.Filters;
+using Models.Commands;
+using Models.Commands.Filters;
 
 namespace DataLayer.Repositories
 {
@@ -30,8 +34,24 @@ namespace DataLayer.Repositories
         {
             lock (_db)
             {
+
+                PrepareTypes(command.Filters.OfType<TypeFilter>());
+
+                foreach (var complexFilter in command.Filters.OfType<ComplexFilter>())
+                {
+                    PrepareTypes(complexFilter.Filters.OfType<TypeFilter>());
+                }
                 _db.Commands.Add(command);
                 return _db.SaveChanges();
+            }
+        }
+
+        private static void PrepareTypes(IEnumerable<TypeFilter> filters)
+        {
+            foreach (var typeFilter in filters)
+            {
+                typeFilter.Type =
+                    _db.PropertyTypes.First(x => x.AchievmentPropertyTypeId == typeFilter.Type.AchievmentPropertyTypeId);
             }
         }
 
@@ -39,6 +59,13 @@ namespace DataLayer.Repositories
         {
             lock (_db)
             {
+                foreach (var command in objects)
+                {
+                    foreach (var typeFilter in command.Filters.OfType<TypeFilter>())
+                    {
+                        typeFilter.Type = _db.PropertyTypes.First(x => x.AchievmentPropertyTypeId == typeFilter.Type.AchievmentPropertyTypeId);
+                    }
+                }
                 _db.Commands.AddRange(objects);
                 return _db.SaveChanges();
             }
@@ -48,6 +75,10 @@ namespace DataLayer.Repositories
         {
             if (!_db.Commands.Any(x => x.CommandId == obj.CommandId))
             {
+                foreach (var typeFilter in obj.Filters.OfType<TypeFilter>())
+                {
+                    typeFilter.Type = _db.PropertyTypes.First(x => x.AchievmentPropertyTypeId == typeFilter.Type.AchievmentPropertyTypeId);
+                }
                 _db.Commands.Add(obj);
             }
             return _db.SaveChanges();

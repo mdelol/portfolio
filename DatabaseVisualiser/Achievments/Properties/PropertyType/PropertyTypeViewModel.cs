@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Achievments;
-using Achievments.AchievmentProperties;
+using Models.Achievments;
+using Models.Achievments.AchievmentProperties;
 using VisualTestApp.Common;
 
 namespace DatabaseVisualiser.Achievments.Properties.PropertyType

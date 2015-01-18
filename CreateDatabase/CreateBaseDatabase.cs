@@ -3,12 +3,14 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using Achievments;
-using Achievments.AchievmentProperties;
 using Commands;
 using DataLayer;
 using DataLayer.Repositories;
 using Commands.Filters;
+using Models.Achievments;
+using Models.Achievments.AchievmentProperties;
+using Models.Commands;
+using Models.Commands.Filters;
 
 namespace CreateDatabase
 {
@@ -103,7 +105,7 @@ namespace CreateDatabase
         {
 // Command to DB
             var command = new Command();
-            var typeForFilter = PropertyTypesRepository.GetInstance().GetObjects().First();
+            var typeForFilter = PropertyTypesRepository.GetInstance().GetNoTrackingObjects().First();
             var f = new ExactFilter() {Type = typeForFilter, ExactValue = "2013"};
             var g = new ExactFilter() {Type = typeForFilter, ExactValue = "2014"};
             var cf = new ComplexFilter() {Filters = new List<BaseFilter>() {f, g}};

@@ -50,6 +50,7 @@ namespace DatabaseVisualiser
             {
                 achievmentsRepository.DeleteObject(achievmentViewModel.GetModel());
             }
+
         }
     }
 }
