@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DatabaseVisualiser;
+using DatabaseVisualiser.Achievments.Properties;
 using DataLayer.Repositories;
-using VisualTestApp.Achievments.Properties;
-using VisualTestApp.Achievments.Properties.PropertyType;
 
 namespace VisualTestApp
 {
@@ -30,29 +31,13 @@ namespace VisualTestApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var propertyTypesViewModel = new PropertyTypesViewModel();
-            var window = new PropertyTypesView()
-            {
-                DataContext = propertyTypesViewModel
-            };
-            window.ShowDialog();
-            //if (window.ShowDialog() == true)
-            {
-                var propertyTypesRepository = PropertyTypesRepository.GetInstance();
-                foreach (var achievmentPropertyType in propertyTypesViewModel.GetModels())
-                {
-                    propertyTypesRepository.UpdateOrAddObject(achievmentPropertyType);
-                }
-            }
+            new DbVisualizer().ShowPropertyTypes();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var window = new PropertiesView()
-            {
-                DataContext = new PropertiesViewModel()
-            };
-            window.ShowDialog();
+            new DbVisualizer().ShowAchievments();
+            
         }
     }
 }

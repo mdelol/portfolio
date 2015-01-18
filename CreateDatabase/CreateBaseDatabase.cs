@@ -34,18 +34,25 @@ namespace CreateDatabase
 
             AchievmentsRepository.GetInstance().AddRange(new List<Achievment> { a, b });
 
-            // Command to DB
+            var command = GetFirstCommand();
+
+            CommandsRepository.GetInstance().AddObject(command);
+        }
+
+        private static Command GetFirstCommand()
+        {
+// Command to DB
             var command = new Command();
             var typeForFilter = PropertyTypesRepository.GetInstance().GetObjects().First();
-            var f = new ExactFilter() { Type = typeForFilter, ExactValue = "2013" };
-            var g = new ExactFilter() { Type = typeForFilter, ExactValue = "2014" };
-            var cf = new ComplexFilter() { Filters = new List<BaseFilter>() { f, g } };
+            var f = new ExactFilter() {Type = typeForFilter, ExactValue = "2013"};
+            var g = new ExactFilter() {Type = typeForFilter, ExactValue = "2014"};
+            var cf = new ComplexFilter() {Filters = new List<BaseFilter>() {f, g}};
             command.Filters = new List<BaseFilter>()
             {
                 cf
             };
             command.Name = "testCommand";
-            CommandsRepository.GetInstance().AddObject(command);
+            return command;
         }
 
         private static Achievment GetFirstAchievment()
@@ -69,7 +76,8 @@ namespace CreateDatabase
             var a = new Achievment()
             {
                 EnumProperties = new List<EnumProperty>() { levelProperty, participantProperty },
-                Properties = new List<AchievmentProperty>() { nameProperty, yearProperty }
+                Properties = new List<AchievmentProperty>() { nameProperty, yearProperty },
+                Name="Вот Это достижение!"
             };
             return a;
         }
@@ -96,7 +104,9 @@ namespace CreateDatabase
             var a = new Achievment()
             {
                 EnumProperties = new List<EnumProperty>() { levelProperty, participantProperty },
-                Properties = new List<AchievmentProperty>() { nameProperty, yearProperty }
+                Properties = new List<AchievmentProperty>() { nameProperty, yearProperty },
+                Name="второе"
+
             };
             return a;
         }

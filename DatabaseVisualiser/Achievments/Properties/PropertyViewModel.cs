@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Dynamic;
-using System.Runtime.InteropServices;
 using Achievments.AchievmentProperties;
 using VisualTestApp.Common;
 
-namespace VisualTestApp.Achievments.Properties
+namespace DatabaseVisualiser.Achievments.Properties
 {
     public class PropertyViewModel : BaseViewModel
     {
@@ -20,7 +18,10 @@ namespace VisualTestApp.Achievments.Properties
 
         public string Value
         {
-            get { return (string)Convert.ChangeType(_value,typeof(string)); }
+            get
+            {
+                return (string)Convert.ChangeType(_value, typeof(string));
+            }
             set
             {
                 _value = Convert.ChangeType(value, Type.GetType(_model.Type.Type));

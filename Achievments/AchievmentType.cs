@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace Achievments
 {
@@ -8,9 +9,10 @@ namespace Achievments
     [Flags]
     public enum AchievmentType
     {
-        
+        [Description("Публикация")]
         Publication = 1,
 
+        [Description("Другое")]
         Other = 2
     }
 }

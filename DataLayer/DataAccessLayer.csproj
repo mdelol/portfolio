@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AchievmentsFactory.cs" />
     <Compile Include="Migrations\201412011657107_InitialCreate.cs" />
     <Compile Include="Migrations\201412011657107_InitialCreate.Designer.cs">
       <DependentUpon>201412011657107_InitialCreate.cs</DependentUpon>
@@ -90,6 +91,10 @@
     <Compile Include="Migrations\201501170514186_command.cs" />
     <Compile Include="Migrations\201501170514186_command.Designer.cs">
       <DependentUpon>201501170514186_command.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501171320391_achievmentName.cs" />
+    <Compile Include="Migrations\201501171320391_achievmentName.Designer.cs">
+      <DependentUpon>201501171320391_achievmentName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AchievmentsRepository.cs" />
@@ -147,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201501170514186_command.resx">
       <DependentUpon>201501170514186_command.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501171320391_achievmentName.resx">
+      <DependentUpon>201501171320391_achievmentName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

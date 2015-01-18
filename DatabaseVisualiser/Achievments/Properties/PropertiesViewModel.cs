@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Documents;
 using Achievments;
 using DataLayer.Repositories;
 using VisualTestApp.Common;
 
-namespace VisualTestApp.Achievments.Properties
+namespace DatabaseVisualiser.Achievments.Properties
 {
     public class PropertiesViewModel : BaseViewModel
     {

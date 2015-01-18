@@ -1,0 +1,70 @@
+﻿<Window x:Class="DatabaseVisualiser.Achievments.AchievmentsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:properties="clr-namespace:DatabaseVisualiser.Achievments.Properties"
+             mc:Ignorable="d" 
+             Height="300" 
+             Width="400">
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ListBox ItemsSource="{Binding Achievments}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedAchievment, Mode=TwoWay}"/>
+
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="firstColumn" />
+                <ColumnDefinition SharedSizeGroup="secondColumn"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label Content="Имя достижения" Grid.Row="1"/>
+
+            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding SelectedAchievment.Name, Mode=TwoWay}"/>
+
+            <Label Content="Тип достижения"  />
+
+            <Label  Grid.Column="1" Content="{Binding SelectedAchievment.Type, Mode=OneWay}" />
+
+            <ItemsControl  ItemsSource="{Binding SelectedAchievment.Properties, Mode=TwoWay}" 
+                               Grid.Row="2"
+                               Grid.Column="0" Grid.ColumnSpan="2">
+                <ItemsControl.ItemTemplate>
+
+                    <DataTemplate DataType="{x:Type properties:PropertyViewModel}">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition SharedSizeGroup="firstColumn" />
+                                <ColumnDefinition SharedSizeGroup="secondColumn"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="{Binding Name}" />
+                            <TextBox Text="{Binding Value, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True}" Grid.Column="1" />
+                        </Grid>
+
+                    </DataTemplate>
+
+                </ItemsControl.ItemTemplate>
+
+            </ItemsControl>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Button Content="Добавить" Command="{Binding AddCommand}"/>
+        </StackPanel>
+    </Grid>
+</Window>

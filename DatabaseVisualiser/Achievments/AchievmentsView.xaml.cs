@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace VisualTestApp.Achievments.Properties.PropertyType
+namespace DatabaseVisualiser.Achievments
 {
     /// <summary>
-    /// Interaction logic for PropertyTypesView.xaml
+    /// Interaction logic for AchievmentsView.xaml
     /// </summary>
-    public partial class PropertyTypesView : Window
+    public partial class AchievmentsView : Window
     {
-        public PropertyTypesView()
+        public AchievmentsView()
         {
             InitializeComponent();
         }

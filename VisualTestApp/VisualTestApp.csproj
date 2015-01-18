@@ -62,35 +62,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Achievments\Properties\PropertiesView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Achievments\Properties\PropertyType\PropertyTypesView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Achievments\AchievmentViewModel.cs" />
-    <Compile Include="Achievments\Properties\PropertiesView.xaml.cs">
-      <DependentUpon>PropertiesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Achievments\Properties\PropertiesViewModel.cs" />
-    <Compile Include="Achievments\Properties\PropertyType\PropertyTypesView.xaml.cs">
-      <DependentUpon>PropertyTypesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Achievments\Properties\PropertyType\PropertyTypesViewModel.cs" />
-    <Compile Include="Achievments\Properties\PropertyType\PropertyTypeViewModel.cs" />
-    <Compile Include="Achievments\Properties\PropertyViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Common\BaseCommand.cs" />
-    <Compile Include="Common\BaseViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -128,6 +107,10 @@
     <ProjectReference Include="..\Achievments\Achievment.csproj">
       <Project>{224A0914-B6EF-4731-AC43-A5536D085298}</Project>
       <Name>Achievment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatabaseVisualiser\DatabaseVisualiser.csproj">
+      <Project>{84860101-2714-4a5a-bc4f-477ce169f8c0}</Project>
+      <Name>DatabaseVisualiser</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataLayer\DataAccessLayer.csproj">
       <Project>{C4015A7A-B717-4EE5-9C08-65F9D43FDACD}</Project>
