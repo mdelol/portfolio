@@ -1,5 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Documents;
 using System.Windows.Input;
 using Achievments;
 using DatabaseVisualiser.Achievments.Properties;
@@ -9,17 +11,17 @@ using VisualTestApp.Common;
 
 namespace DatabaseVisualiser.Achievments
 {
-    public class AchievmentsViewModel:BaseViewModel
+    public class AchievmentsViewModel : BaseViewModel
     {
         private AchievmentViewModel _selectedAchievment;
 
         public AchievmentsViewModel()
         {
-            Achievments = new ObservableCollection<AchievmentViewModel>(AchievmentsRepository.GetInstance().GetObjects().Select(x=>new AchievmentViewModel(x)));
+            Achievments = new ObservableCollection<AchievmentViewModel>(AchievmentsRepository.GetInstance().GetObjects().Select(x => new AchievmentViewModel(x)));
             SelectedAchievment = Achievments.FirstOrDefault();
         }
 
-        public ObservableCollection<AchievmentViewModel> Achievments{ get; set; }
+        public ObservableCollection<AchievmentViewModel> Achievments { get; set; }
 
         public AchievmentViewModel SelectedAchievment
         {
@@ -44,7 +46,11 @@ namespace DatabaseVisualiser.Achievments
                     }
                 });
             }
+        }
 
+        public IEnumerable<Achievment> GetModels()
+        {
+            return Achievments.Select(x => x.GetModel());
         }
 
     }

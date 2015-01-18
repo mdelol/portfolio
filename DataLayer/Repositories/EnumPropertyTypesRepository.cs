@@ -49,5 +49,14 @@ namespace DataLayer.Repositories
                 return _db.SaveChanges();
             }
         }
+
+        public override int UpdateOrAddObject(EnumPropertyType obj)
+        {
+            if (!_db.EnumPropertyTypes.Any(x => x.EnumPropertyTypeId == obj.EnumPropertyTypeId))
+            {
+                _db.EnumPropertyTypes.Add(obj);
+            }
+            return _db.SaveChanges();
+        }
     }
 }

@@ -52,7 +52,7 @@ namespace DataLayer.Repositories
             }
         }
 
-        public int UpdateOrAddObject(AchievmentPropertyType obj)
+        public override int UpdateOrAddObject(AchievmentPropertyType obj)
         {
             if (!_db.PropertyTypes.Any(x => x.AchievmentPropertyTypeId == obj.AchievmentPropertyTypeId))
             {

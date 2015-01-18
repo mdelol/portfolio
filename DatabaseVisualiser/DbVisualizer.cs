@@ -37,6 +37,8 @@ namespace DatabaseVisualiser
                 DataContext = achievmentsViewModel
             };
             window.ShowDialog();
+
+
         }
     }
 }

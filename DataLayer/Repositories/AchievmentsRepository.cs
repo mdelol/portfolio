@@ -48,5 +48,14 @@ namespace DataLayer.Repositories
                 return _db.SaveChanges();
             }
         }
+
+        public override int UpdateOrAddObject(Achievment obj)
+        {
+            if (!_db.Achievments.Any(x => x.AchievmentId == obj.AchievmentId))
+            {
+                _db.Achievments.Add(obj);
+            }
+            return _db.SaveChanges();
+        }
     }
 }

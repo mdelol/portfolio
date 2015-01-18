@@ -16,7 +16,7 @@ namespace DataLayer.Repositories
 
         public abstract int AddRange(IEnumerable<T> objects);
 
-        //public abstract int UpdateOrAddObject(T obj);
+        public abstract int UpdateOrAddObject(T obj);
 
         public void Dispose()
         {

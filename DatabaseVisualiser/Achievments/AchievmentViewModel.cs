@@ -36,5 +36,10 @@ namespace DatabaseVisualiser.Achievments
                 return _model.Type.GetDescription();
             }
         }
+
+        public Achievment GetModel()
+        {
+            return _model;
+        }
     }
 }
