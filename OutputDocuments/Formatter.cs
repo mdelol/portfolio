@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Windows.Navigation;
 using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Text = DocumentFormat.OpenXml.Wordprocessing.Text;
 namespace OutputDocuments
 {
@@ -13,27 +16,57 @@ namespace OutputDocuments
             using (WordprocessingDocument doc = WordprocessingDocument.Open(pathToFile,true))
             {
                 var body = doc.MainDocumentPart.Document.Body;
-                string docText = "";
-                bool flag = false;
                 var keys = dictionary.Keys.ToList();
-                foreach (var text in body.Descendants<Text>())
+
+                var dict = new Dictionary<string, string>();
+                foreach (var key in keys)
                 {
-                    foreach (var key in keys)
+                    var s = "#{" + key + "}";
+                    dict.Add(s,key);
+                }
+
+                var newKeys = dict.Keys.ToList();
+                foreach (var paragraph in body.Descendants<Paragraph>())
+                {
+                    foreach (var key in newKeys)
                     {
-                        if (text.Text.Contains("#"))
-                        {
-                            flag = true;
-                            text.Text = text.Text.Replace("#", "");
-                        } 
-                        else
-                            flag = false;
-                        if (!text.Text.Contains(key)&&!flag) continue;
-                        var textForReplace = "";
-                        dictionary.TryGetValue(key,out textForReplace);
-                        text.Text = text.Text.Replace(key , textForReplace);
+                        ReplaceTextInParagraph(paragraph,key,dictionary[dict[key]]);
                     }
                 }
                 doc.Close();
+            }
+        }
+
+        public static void ReplaceTextInParagraph(Paragraph paragraph, string oldText, string newText)
+        {
+            var text = paragraph.InnerText;
+
+            RunProperties runProperties = null;
+
+            Run run;
+            while ((run = paragraph.GetFirstChild<Run>()) != null)
+            {
+                if (runProperties == null)
+                {
+                    runProperties = run.GetFirstChild<RunProperties>();
+                }
+
+                run.Remove();
+            }
+
+            string str = string.IsNullOrEmpty(oldText) ? newText : text.Replace(oldText, newText);
+            var substrs = str.Split('\n');
+            for (int i = 0; i < substrs.Length; ++i)
+            {
+                run = new Run(new Text(substrs[i]));
+                if (runProperties != null)
+                {
+                    run.RunProperties = (RunProperties)runProperties.CloneNode(true);
+                }
+
+                paragraph.Append(run);
+                if (i < substrs.Length - 1)
+                    paragraph.Append(new Break());
             }
         }
     }
