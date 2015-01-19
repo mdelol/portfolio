@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:commands="clr-namespace:DatabaseVisualiser.Commands"
              xmlns:filters="clr-namespace:Models.Commands.Filters;assembly=Models"
+             xmlns:filters1="clr-namespace:Commands.Filters;assembly=Models"
              mc:Ignorable="d" 
              Height="300" Width="513">
     <Grid>
@@ -37,7 +38,7 @@
 
                         <RadioButton Content="Результат выполнения команды" Margin="4"  VerticalAlignment="Center"/>
 
-                        <ComboBox Width="155" Margin="4" ItemsSource="{Binding AvailableCommands}" SelectedItem="{Binding SelectedCommand, Mode=TwoWay}" DisplayMemberPath="Name"/>
+                        <ComboBox Width="155" Margin="4" ItemsSource="{Binding AvailableCommands}" SelectedItem="{Binding SelectedCommand, Mode=TwoWay, NotifyOnSourceUpdated=True}" DisplayMemberPath="Name"/>
 
                     </StackPanel>
                 </GroupBox>
@@ -79,11 +80,16 @@
                                             <ColumnDefinition SharedSizeGroup="secondColumn"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <Label Content="{Binding Type.Name}" />
+                                        <Label Content="{Binding Type.Name}" Margin="4"/>
 
-                                        <TextBox Grid.Column="1" Text="{Binding ExactValue}" />
+                                        <TextBox Grid.Column="1" Text="{Binding ExactValue}" Margin="4"/>
 
                                     </Grid>
+                                </DataTemplate>
+                                <DataTemplate DataType="{x:Type filters1:ComplexFilter}">
+                                    <GroupBox Header="Сложный фильтр">
+                                        <ItemsControl ItemsSource="{Binding Filters}" Margin="4" />
+                                    </GroupBox>
                                 </DataTemplate>
                             </ItemsControl.Resources>
                         </ItemsControl>
@@ -92,17 +98,17 @@
                 </GroupBox>
 
             </Grid>
-            
+
         </ScrollViewer>
-        
+
         <StackPanel Grid.Row="1" Orientation="Horizontal" FlowDirection="RightToLeft">
-            
+
             <Button Content="Отмена" Width="60" Margin="4" IsCancel="True"/>
 
             <Button Content="OK" Width="60" Margin="4" Click="ButtonBase_OnClick"/>
 
         </StackPanel>
-        
+
     </Grid>
 
 </Window>

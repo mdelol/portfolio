@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Xaml;
+using Commands.Filters;
 using DatabaseVisualiser.Achievments.Properties.PropertyType;
 using DataLayer.Repositories;
+using Models.Achievments.AchievmentProperties;
 using Models.Commands.Filters;
 using VisualTestApp.Common;
 
@@ -19,6 +22,7 @@ namespace DatabaseVisualiser.Commands.Master
             SelectedCommand = AvailableCommands.FirstOrDefault();
             IsPublication = true;
             AvailableTypes = new ObservableCollection<PropertyTypeViewModel>(PropertyTypesRepository.GetInstance().GetNoTrackingObjects().Select(x => new PropertyTypeViewModel(x)));
+            AvailableTypes.Add(ComplexStub);
             Filters=new ObservableCollection<BaseFilter>();
         }
 
@@ -32,6 +36,7 @@ namespace DatabaseVisualiser.Commands.Master
 
         public List<CommandViewModel> AvailableCommands { get; set; }
 
+        public PropertyTypeViewModel ComplexStub=new PropertyTypeViewModel(new AchievmentPropertyType(){Name = "Сложный фильтр"});
         public ObservableCollection<PropertyTypeViewModel> AvailableTypes { get; set; }
 
         public PropertyTypeViewModel SelectedType
@@ -39,12 +44,35 @@ namespace DatabaseVisualiser.Commands.Master
             get { return null; }
             set
             {
-                AvailableTypes.Remove(value);
-                Filters.Add(new ExactFilter()
+                if (!object.ReferenceEquals(value, ComplexStub))
                 {
-                    Type = value.GetModel()
-                });
+                    AvailableTypes.Remove(value);
+                    Filters.Add(new ExactFilter()
+                    {
+                        Type = value.GetModel()
+                    });
+                }
+                else
+                {
+                    AvailableTypes.Remove(value);
+                    var typeSelectDialog = new TypeSelectDialog(AvailableTypes.ToList());
+                    if (typeSelectDialog.ShowDialog() == true)
+                    {
+                        var selectedType = typeSelectDialog.SelectedType;
+                        var complexFilterCreationDialog = new ComplexFilterCreationDialog(selectedType.GetModel());
+                        if (complexFilterCreationDialog.ShowDialog() == true)
+                        {
+                            var filter = new ComplexFilter {Filters = complexFilterCreationDialog.Filters.ToList()};
+                            Filters.Add(filter);
+                            AvailableTypes.Remove(AvailableTypes.First(x => x.Name == selectedType.Name));
+                        }
+
+                    }
+                    AvailableTypes.Add(value);
+                }
                 OnPropertyChanged("Filters");
+                OnPropertyChanged("SelectedType");
+                OnPropertyChanged("AvailableTypes");
             }
         }
 

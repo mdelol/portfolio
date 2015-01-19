@@ -72,10 +72,16 @@
     <Compile Include="Commands\Filters\ExactFilterViewModel.cs" />
     <Compile Include="Commands\Filters\TypeFilterViewModel.cs" />
     <Compile Include="Commands\Master\CommandCreationMaster.cs" />
+    <Compile Include="Commands\Master\ComplexFilterCreationDialog.xaml.cs">
+      <DependentUpon>ComplexFilterCreationDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Commands\Master\CreateCommandDialog.xaml.cs">
       <DependentUpon>CreateCommandDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commands\Master\NewCommandViewModel.cs" />
+    <Compile Include="Commands\Master\TypeSelectDialog.xaml.cs">
+      <DependentUpon>TypeSelectDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Common\BaseCommand.cs" />
     <Compile Include="Common\BaseViewModel.cs" />
     <Compile Include="Common\EnumExtension.cs" />
@@ -99,7 +105,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Commands\Master\ComplexFilterCreationDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Commands\Master\CreateCommandDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Master\TypeSelectDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

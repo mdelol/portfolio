@@ -57,7 +57,7 @@ namespace DataLayer.Repositories
 
         public override int AddRange(IEnumerable<Command> objects)
         {
-            lock (_db)
+            lock (_db)//TODO сделать как в добавлении единичного объекта
             {
                 foreach (var command in objects)
                 {
@@ -75,9 +75,10 @@ namespace DataLayer.Repositories
         {
             if (!_db.Commands.Any(x => x.CommandId == obj.CommandId))
             {
-                foreach (var typeFilter in obj.Filters.OfType<TypeFilter>())
+                PrepareTypes(obj.Filters.OfType<TypeFilter>());
+                foreach (var complexFilter in obj.Filters.OfType<ComplexFilter>())
                 {
-                    typeFilter.Type = _db.PropertyTypes.First(x => x.AchievmentPropertyTypeId == typeFilter.Type.AchievmentPropertyTypeId);
+                    PrepareTypes(complexFilter.Filters.OfType<TypeFilter>());
                 }
                 _db.Commands.Add(obj);
             }

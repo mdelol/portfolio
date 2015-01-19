@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Models.Achievments;
 using Models.Commands.Filters;
@@ -22,5 +23,6 @@ namespace Commands.Filters
         }
 
         public virtual List<BaseFilter> Filters { get; set; }
+
     }
 }
