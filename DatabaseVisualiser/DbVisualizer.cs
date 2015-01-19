@@ -80,21 +80,6 @@ namespace DatabaseVisualiser
             {
                 repository.DeleteObject(deletedCommand);
             }
-            }
-        public void ShitHappender()
-        {
-            var openFileDialog = new OpenFileDialog();
-            var achievments = AchievmentsRepository.GetInstance().GetObjects();
-            var command = CommandsRepository.GetInstance().GetObjects().First();
-            var commandList = new List<Command>();
-            commandList.Add(command);
-            string pathToFile="";
-            if (openFileDialog.ShowDialog()==true)
-            {
-                pathToFile = openFileDialog.FileName;
-            }
-            var dictionary = DbToFilter.Filter(achievments, commandList);
-            Formatter.ReplaceTextInDocument(dictionary,pathToFile);
         }
     }
 }

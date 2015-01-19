@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DatabaseVisualiser;
+using OutputDocuments;
 
 namespace VisualTestApp
 {
@@ -27,7 +28,7 @@ namespace VisualTestApp
 
         private void ExportButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            new DocumentsCreator().FillDocument();
         }
 
         private void ShowCommands(object sender, RoutedEventArgs e)
