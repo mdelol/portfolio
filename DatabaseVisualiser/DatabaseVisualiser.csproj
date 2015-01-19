@@ -119,6 +119,10 @@
       <Project>{C4015A7A-B717-4EE5-9C08-65F9D43FDACD}</Project>
       <Name>DataAccessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OutputDocuments\OutputDocuments.csproj">
+      <Project>{8c704d23-7cb7-438e-aea6-335df87d5ebf}</Project>
+      <Name>OutputDocuments</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

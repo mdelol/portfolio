@@ -96,7 +96,7 @@ namespace CreateDatabase
             {
                 cf
             };
-            command.Name = "cmdTake__Prop_NumPages__With_42and1982";
+            command.Name = "Покажи количество страниц 42 или 1982";
             CommandsRepository.GetInstance().AddObject(command);
 
             command = new Command();
@@ -107,7 +107,19 @@ namespace CreateDatabase
             {
                 cf
             };
-            command.Name = "cmdTake__Prop_NamePublisher__With_ComedyClubPress";
+            command.Name = "Покажи имя издателя КомедиКлабПресс";
+            CommandsRepository.GetInstance().AddObject(command);
+
+            command = new Command();
+            typeForFilter = PropertyTypesRepository.GetInstance().GetObjects().First(a => a == _namePublisherPropertyTypeForPublic);
+            g = new ExactFilter() { Type = typeForFilter, ExactValue = "КомедиКлабПресс" };
+            typeForFilter = PropertyTypesRepository.GetInstance().GetObjects().First(a => a == _numOfPagesPropertyTypeForPublic);
+            f = new ExactFilter() { Type = typeForFilter, ExactValue = "42" };
+            command.Filters = new List<BaseFilter>()
+            {
+                g, f
+            };
+            command.Name = "Покажи имя издателя КомедиКлабПресс и количество страниц 42";
             CommandsRepository.GetInstance().AddObject(command);
         }
 
