@@ -62,6 +62,20 @@
     <Compile Include="Achievments\TypeChooseDialog.xaml.cs">
       <DependentUpon>TypeChooseDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands\CommandsView.xaml.cs">
+      <DependentUpon>CommandsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\CommandsViewModel.cs" />
+    <Compile Include="Commands\CommandViewModel.cs" />
+    <Compile Include="Commands\Filters\BaseFilterViewModel.cs" />
+    <Compile Include="Commands\Filters\ComplexFilterViewModel.cs" />
+    <Compile Include="Commands\Filters\ExactFilterViewModel.cs" />
+    <Compile Include="Commands\Filters\TypeFilterViewModel.cs" />
+    <Compile Include="Commands\Master\CommandCreationMaster.cs" />
+    <Compile Include="Commands\Master\CreateCommandDialog.xaml.cs">
+      <DependentUpon>CreateCommandDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Master\NewCommandViewModel.cs" />
     <Compile Include="Common\BaseCommand.cs" />
     <Compile Include="Common\BaseViewModel.cs" />
     <Compile Include="Common\EnumExtension.cs" />
@@ -78,6 +92,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Achievments\TypeChooseDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\CommandsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Master\CreateCommandDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,6 +120,7 @@
       <Name>DataAccessLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

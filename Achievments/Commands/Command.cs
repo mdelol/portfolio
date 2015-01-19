@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Models.Achievments;
 using Models.Commands.Filters;
@@ -31,16 +32,20 @@ namespace Models.Commands
         /// Выполнить команду
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Achievment> Execute(IEnumerable<Achievment> achievments = null)
+        public IEnumerable<Achievment> Execute(IEnumerable<Achievment> achievments)
         {
             var baseList = new List<Achievment>();
             if (ParentCommand != null)
             {
-                baseList.AddRange(ParentCommand.Execute());
+                baseList.AddRange(ParentCommand.Execute(achievments));
             }
             else if(achievments!=null)
             {
                 baseList.AddRange(achievments);
+            }
+            else
+            {
+                throw new ApplicationException("Комманда не имеет родительской комманды и не получила данные на вход!");
             }
 
             var filters = new List<BaseFilter>(Filters);

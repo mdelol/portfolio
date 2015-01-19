@@ -15,9 +15,10 @@ namespace DatabaseVisualiser.Achievments
     {
         private AchievmentViewModel _selectedAchievment;
 
-        public AchievmentsViewModel()
+        public AchievmentsViewModel(IEnumerable<Achievment> achievments, bool openToShow = false)
         {
-            Achievments = new ObservableCollection<AchievmentViewModel>(AchievmentsRepository.GetInstance().GetObjects().Select(x => new AchievmentViewModel(x)));
+            IsNotReadOnly = !openToShow;
+            Achievments = new ObservableCollection<AchievmentViewModel>(achievments.Select(x => new AchievmentViewModel(x)));
             SelectedAchievment = Achievments.FirstOrDefault();
             DeletedAchievments=new List<AchievmentViewModel>();
         }
@@ -73,5 +74,6 @@ namespace DatabaseVisualiser.Achievments
             return Achievments.Select(x => x.GetModel());
         }
 
+        public bool IsNotReadOnly { get; set; }
     }
 }

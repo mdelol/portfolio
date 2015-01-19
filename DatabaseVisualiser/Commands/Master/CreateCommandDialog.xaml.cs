@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,31 +13,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DatabaseVisualiser;
-using DatabaseVisualiser.Achievments.Properties;
+using DatabaseVisualiser.Achievments.Properties.PropertyType;
 using DataLayer.Repositories;
+using Models.Achievments.AchievmentProperties;
+using Models.Commands.Filters;
 
-namespace VisualTestApp
+namespace DatabaseVisualiser.Commands.Master
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CreateCommandDialog.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateCommandDialog : Window
     {
-        public MainWindow()
+        public CreateCommandDialog()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            new DbVisualizer().ShowPropertyTypes();
-        }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            new DbVisualizer().ShowAchievments();
-            
+            DialogResult = true;
         }
     }
 }

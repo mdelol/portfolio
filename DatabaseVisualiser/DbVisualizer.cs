@@ -1,5 +1,7 @@
-﻿using DatabaseVisualiser.Achievments;
+﻿using System.Linq;
+using DatabaseVisualiser.Achievments;
 using DatabaseVisualiser.Achievments.Properties.PropertyType;
+using DatabaseVisualiser.Commands;
 using DataLayer.Repositories;
 
 namespace DatabaseVisualiser
@@ -31,7 +33,7 @@ namespace DatabaseVisualiser
 
         public void ShowAchievments()
         {
-            var achievmentsViewModel = new AchievmentsViewModel();
+            var achievmentsViewModel = new AchievmentsViewModel(AchievmentsRepository.GetInstance().GetObjects());
             var window = new AchievmentsView()
             {
                 DataContext = achievmentsViewModel
@@ -50,7 +52,29 @@ namespace DatabaseVisualiser
             {
                 achievmentsRepository.DeleteObject(achievmentViewModel.GetModel());
             }
+        }
 
+        public void ShowCommands()
+        {
+            var commandsViewModel = new CommandsViewModel();
+            var window = new CommandsView()
+            {
+                DataContext = commandsViewModel
+            };
+            window.ShowDialog();
+
+            var repository = CommandsRepository.GetInstance();
+            var models = commandsViewModel.GetModels();
+            foreach (var command in models)
+            {
+                repository.UpdateOrAddObject(command);
+            }
+
+            var deletedCommands = commandsViewModel.DeletedCommands.Select(x => x.GetModel());
+            foreach (var deletedCommand in deletedCommands)
+            {
+                repository.DeleteObject(deletedCommand);
+            }
         }
     }
 }

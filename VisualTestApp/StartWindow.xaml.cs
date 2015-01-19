@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DatabaseVisualiser;
 
 namespace VisualTestApp
 {
@@ -27,6 +28,21 @@ namespace VisualTestApp
         private void ExportButtonClicked(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ShowCommands(object sender, RoutedEventArgs e)
+        {
+            new DbVisualizer().ShowCommands();
+        }
+
+        private void ShowAchievments(object sender, RoutedEventArgs e)
+        {
+            new DbVisualizer().ShowAchievments();
+        }
+
+        private void ShowPropertyTypes(object sender, RoutedEventArgs e)
+        {
+            new DbVisualizer().ShowPropertyTypes();
         }
     }
 }

@@ -1,0 +1,108 @@
+﻿<Window x:Class="DatabaseVisualiser.Commands.Master.CreateCommandDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:commands="clr-namespace:DatabaseVisualiser.Commands"
+             xmlns:filters="clr-namespace:Models.Commands.Filters;assembly=Models"
+             mc:Ignorable="d" 
+             Height="300" Width="513">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Label Content="Имя команды" Margin="4"/>
+
+                    <TextBox Width="200" Margin="4" Text="{Binding CommandName, Mode=TwoWay}"/>
+                </StackPanel>
+
+                <GroupBox Header="Источник данных для команды " Margin="4" Grid.Row="1">
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <RadioButton Content="Все достижения"  Margin="4" VerticalAlignment="Center" IsChecked="{Binding UseAllAchievments}"/>
+
+                        <RadioButton Content="Результат выполнения команды" Margin="4"  VerticalAlignment="Center"/>
+
+                        <ComboBox Width="155" Margin="4" ItemsSource="{Binding AvailableCommands}" SelectedItem="{Binding SelectedCommand, Mode=TwoWay}" DisplayMemberPath="Name"/>
+
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Grid.Row="2" Header="Тип достижения" Margin="4">
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <RadioButton Content="Публикация" Margin="4" VerticalAlignment="Center" IsChecked="{Binding IsPublication}"/>
+
+                        <RadioButton Content="Другое" Margin="4" VerticalAlignment="Center"/>
+
+                    </StackPanel>
+
+                </GroupBox>
+
+                <GroupBox Grid.Row="3" Header="Фильтры" Margin="4">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition SharedSizeGroup="firstColumn"/>
+                            <ColumnDefinition SharedSizeGroup="secondColumn"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Добавить фильтр:" />
+
+                        <ComboBox Grid.Row="0" Grid.Column="1" Margin="4" ItemsSource="{Binding AvailableTypes}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedType}"/>
+
+                        <ItemsControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Filters, Mode=TwoWay, NotifyOnSourceUpdated=True}">
+                            <ItemsControl.Resources>
+                                <DataTemplate DataType="{x:Type filters:ExactFilter}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition SharedSizeGroup="firstColumn"/>
+                                            <ColumnDefinition SharedSizeGroup="secondColumn"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Content="{Binding Type.Name}" />
+
+                                        <TextBox Grid.Column="1" Text="{Binding ExactValue}" />
+
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.Resources>
+                        </ItemsControl>
+                    </Grid>
+
+                </GroupBox>
+
+            </Grid>
+            
+        </ScrollViewer>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" FlowDirection="RightToLeft">
+            
+            <Button Content="Отмена" Width="60" Margin="4" IsCancel="True"/>
+
+            <Button Content="OK" Width="60" Margin="4" Click="ButtonBase_OnClick"/>
+
+        </StackPanel>
+        
+    </Grid>
+
+</Window>
