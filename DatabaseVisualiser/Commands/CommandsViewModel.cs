@@ -77,7 +77,10 @@ namespace DatabaseVisualiser.Commands
             {
                 return new RelayCommand(x =>
                 {
-                    DeletedCommands.Add(SelectedCommand);
+                    if (SelectedCommand.GetModel().CommandId != 0)
+                    {
+                        DeletedCommands.Add(SelectedCommand);
+                    }
                     var index = Commands.IndexOf(SelectedCommand);
                     Commands.Remove(SelectedCommand);
                     if (Commands.Count == 0)
